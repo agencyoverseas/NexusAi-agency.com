@@ -1214,8 +1214,9 @@ window.PRICING_CONFIG = {
     {
       tag:   'Multiservices',
       title: 'Wassou Multiservices',
-      desc:  'Site vitrine · 2025',
-      image: ''   // ← mets ici l'URL d'une photo, ex : 'images/wassou.jpg' ou 'https://...'
+      desc:  'Site vitrine + prise de RDV WhatsApp · Guadeloupe · 2025',
+      image: 'https://agencyoverseas.github.io/Wassoumultiservices/assets/landing/hero.jpg',
+      url:   'https://agencyoverseas.github.io/Wassoumultiservices/'
     }
   ],
 
@@ -1309,12 +1310,14 @@ window.PRICING_CONFIG = {
       const div = document.createElement('div');
       div.className = 'example reveal';
       const imgHtml = r.image ? `<img class="example-img" src="${r.image}" alt="${r.title}" loading="lazy">` : '';
+      const linkHtml = r.url ? `<a href="${r.url}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding:10px 16px; background:#d4af37; color:#0d2818; text-decoration:none; border-radius:10px; font-weight:600; font-size:13px; letter-spacing:0.3px; transition:transform 0.2s;" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='translateX(0)'">Voir le site live →</a>` : '';
       div.innerHTML = `
         ${imgHtml}
         <div class="label">
           <span class="num">— ${r.tag || ''}</span>
           <h3>${r.title || ''}</h3>
           <p>${r.desc || ''}</p>
+          ${linkHtml}
         </div>
       `;
       examplesGrid.appendChild(div);
