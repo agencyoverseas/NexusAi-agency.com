@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2818" />
+<title>NexusAI Agency — Le digital premium conçu pour votre business</title>
+<meta name="description" content="NexusAI Agency conçoit landing pages, sites web, Shopify, applications et solutions IA pour entrepreneurs, TPE et PME. Devis en ligne, simulateur de prix, contact direct WhatsApp." />
+<meta property="og:title" content="NexusAI Agency — Le digital premium conçu pour votre business" />
+<meta property="og:description" content="Landing pages, sites, Shopify, applications, IA et automatisations. Premium, sur mesure, orientées conversion." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   NEXUSAI — VERT ÉMERAUDE / BLANC CRÈME / OR
+   Alternance sections sombres + claires pour effet hypnotique
+   ============================================================ */
+
+:root {
+  /* Verts visibles */
+  --green-deep:    #0d2818;
+  --green-rich:    #14442b;
+  --green-mid:     #1f6e4f;
+  --green-glow:    #34d399;
+  --green-fog:     rgba(31, 110, 79, 0.35);
+
+  /* Crème / blanc luxe */
+  --cream:         #f6f1e3;
+  --cream-deep:    #ece4cf;   /* fond crème plus saturé */
+  --cream-light:   #fbf7eb;
+  --cream-soft:    #d9d2bf;
+  --cream-mute:    #8e8775;
+
+  /* Or */
+  --gold:          #c8973f;     /* or principal */
+  --gold-bright:   #e8c470;
+  --gold-deep:     #8a6a36;
+  --gold-warm:     #b8842b;
+
+  /* Inks (texte sur clair) */
+  --ink-dark:      #122019;     /* texte vert foncé sur fond crème */
+  --ink-soft:      #3a4d40;
+
+  /* Lignes */
+  --line-d:        rgba(200,151,63,0.18);   /* sur sombre */
+  --line-d-strong: rgba(200,151,63,0.36);
+  --line-l:        rgba(18,32,25,0.12);     /* sur clair */
+  --line-l-strong: rgba(18,32,25,0.22);
+
+  --shadow-gold:   0 30px 80px -20px rgba(200,151,63,0.35);
+  --shadow-green:  0 30px 80px -20px rgba(31,110,79,0.45);
+  --shadow-soft:   0 20px 50px -15px rgba(18,32,25,0.18);
+
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 22px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--green-deep);
+  color: var(--cream);
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+}
+
+/* ─── HALOS HYPNOTIQUES (visibles surtout sur fonds sombres) ─── */
+.aura-1, .aura-2, .aura-3 { position: fixed; pointer-events: none; z-index: 0; border-radius: 50%; filter: blur(80px); }
+.aura-1 { top: -15%; right: -10%; width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(31,110,79,0.55) 0%, transparent 65%);
+  animation: breathe 9s ease-in-out infinite;
+}
+.aura-2 { bottom: -20%; left: -10%; width: 55vw; height: 55vw;
+  background: radial-gradient(circle, rgba(200,151,63,0.30) 0%, transparent 65%);
+  animation: breathe 11s ease-in-out infinite reverse;
+}
+.aura-3 { top: 40%; left: 30%; width: 40vw; height: 40vw;
+  background: radial-gradient(circle, rgba(52,211,153,0.20) 0%, transparent 70%);
+  animation: drift 18s ease-in-out infinite;
+}
+@keyframes breathe { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.15) translate(2%, -3%); opacity: 1; } }
+@keyframes drift { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(-15%, 8%) scale(1.1); } 66% { transform: translate(12%, -10%) scale(.95); } }
+
+/* Grain global */
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.06; pointer-events: none; z-index: 1000; mix-blend-mode: overlay;
+}
+
+/* ============== Typo ============== */
+.display { font-family: 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold);
+  padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--line-d-strong);
+  background: rgba(200,151,63,0.06); backdrop-filter: blur(10px);
+}
+.eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background: var(--gold);
+  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold);
+  animation: blink 2s ease-in-out infinite;
+}
+/* Eyebrow sur bg-light (vert) */
+.bg-light .eyebrow {
+  color: var(--gold);
+  border: 1px solid var(--line-d-strong);
+  background: rgba(200,151,63,0.06);
+}
+@keyframes blink { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+h2 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; }
+h3 { font-size: 1.6rem; letter-spacing: -0.01em; }
+
+.wrap { width: min(1240px, 92%); margin: 0 auto; position: relative; z-index: 2; }
+section { padding: clamp(80px, 12vw, 140px) 0; position: relative; }
+
+/* ════════════════════════════════════════════════════════════
+   SECTIONS CLAIRES (crème) — blanc luxe, accents verts/dorés
+   ════════════════════════════════════════════════════════════ */
+.bg-light {
+  background: var(--green-deep);
+  color: var(--cream);
+  position: relative;
+}
+.bg-light .display { color: var(--cream); }
+.bg-light h2 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.bg-light .section-head .num { color: var(--gold); }
+.bg-light .section-head .desc { color: var(--cream-soft); }
+
+
+
+/* ============== Nav ============== */
+nav.top { position: fixed; top: 0; left: 0; right: 0; padding: 18px 0; z-index: 100;
+  backdrop-filter: blur(18px); background: rgba(13,40,24,0.7);
+  border-bottom: 1px solid var(--line-d);
+  transition: padding .3s var(--ease), background .3s var(--ease);
+}
+nav.top.scrolled { padding: 12px 0; background: rgba(13,40,24,0.95); }
+nav.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 500;
+  color: var(--cream); text-decoration: none; display: flex; align-items: center; gap: 10px;
+}
+.logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+  box-shadow: 0 0 12px var(--gold), 0 0 24px var(--gold);
+  animation: blink 2.4s ease-in-out infinite;
+}
+.logo span { color: var(--gold); font-style: italic; }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a { color: var(--cream-soft); text-decoration: none; font-size: 14px; transition: color .2s; position: relative; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a::after { content:''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--gold); transition: width .3s var(--ease); }
+.nav-links a:hover::after { width: 100%; }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line-d-strong); color: var(--cream); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 18px; }
+
+/* ============== Boutons ============== */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 999px;
+  font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: all .35s var(--ease); position: relative; overflow: hidden;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+  color: #1a1208;
+  box-shadow: 0 14px 40px -12px rgba(200,151,63,0.6), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+.btn-primary::before { content:''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
+  transform: translateX(-100%); transition: transform .8s var(--ease);
+}
+.btn-primary:hover::before { transform: translateX(100%); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 50px -10px rgba(200,151,63,0.75); }
+
+.btn-ghost { background: rgba(255,255,255,0.03); color: var(--cream);
+  border: 1px solid var(--line-d-strong); backdrop-filter: blur(10px);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,151,63,0.08); }
+
+/* Variante ghost sur fond clair */
+.bg-light .btn-ghost {
+  background: rgba(255,255,255,0.03); color: var(--cream);
+  border-color: var(--line-d-strong);
+}
+.bg-light .btn-ghost:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,151,63,0.08); }
+
+.btn-wa { background: linear-gradient(135deg, #1a3d2c, #245438);
+  color: #6ee7a7; border: 1px solid rgba(110,231,167,0.35);
+}
+.btn-wa:hover { background: linear-gradient(135deg, #234d36, #2d6a48); border-color: #6ee7a7; }
+.btn svg { width: 16px; height: 16px; }
+
+/* ============== HERO (sombre vert) ============== */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; position: relative;
+  background: var(--green-deep);
+}
+.hero-conic { position: absolute; top: 50%; left: 50%; width: 130vmax; height: 130vmax;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg,
+    transparent 0deg, rgba(31,110,79,0.30) 60deg,
+    rgba(200,151,63,0.22) 120deg, transparent 180deg,
+    rgba(200,151,63,0.12) 240deg, rgba(31,110,79,0.30) 300deg,
+    transparent 360deg);
+  filter: blur(60px); opacity: 0.6;
+  animation: spin 40s linear infinite;
+  z-index: 0; pointer-events: none;
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+}
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.hero-grid { position: absolute; inset: 0;
+  background-image: linear-gradient(var(--line-d) 1px, transparent 1px), linear-gradient(90deg, var(--line-d) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  opacity: 0.5; z-index: 1;
+}
+.hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: center; }
+.hero-content { animation: rise 1s var(--ease) both; }
+.hero h1 { font-size: clamp(3rem, 7.5vw, 6.4rem); font-weight: 300; margin: 28px 0 32px; line-height: 0.98; color: var(--cream); }
+.hero h1 em { font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .lead { font-size: clamp(1rem, 1.3vw, 1.15rem); color: var(--cream-soft); max-width: 560px; margin-bottom: 44px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+.hero-meta { display: flex; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--line-d); }
+.hero-meta .stat { display: flex; flex-direction: column; gap: 4px; }
+.hero-meta .stat strong { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; line-height: 1;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-meta .stat span { font-size: 12px; color: var(--cream-mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* HERO VISUEL HYPNOTIQUE */
+.hero-visual { position: relative; aspect-ratio: 4/5; border-radius: var(--radius-l); overflow: hidden;
+  border: 1px solid var(--line-d-strong);
+  background: radial-gradient(circle at 50% 50%, var(--green-rich) 0%, var(--green-deep) 100%);
+  animation: rise 1.2s var(--ease) .15s both;
+  box-shadow: var(--shadow-green), inset 0 0 80px rgba(0,0,0,0.4);
+}
+.orbe { position: absolute; top: 50%; left: 50%; border-radius: 50%;
+  border: 1px solid var(--gold); transform: translate(-50%, -50%); pointer-events: none;
+}
+.orbe-1, .orbe-2, .orbe-3 { width: 70%; aspect-ratio: 1; opacity: 0.5; animation: pulse-ring 4s ease-out infinite; }
+.orbe-2 { animation-delay: 1.3s; }
+.orbe-3 { animation-delay: 2.6s; }
+@keyframes pulse-ring {
+  0%   { width: 30%; opacity: 0.8; border-color: var(--gold-bright); }
+  100% { width: 130%; opacity: 0; border-color: var(--green-mid); }
+}
+.hero-visual::before { content:''; position: absolute; top: 50%; left: 50%; width: 140%; height: 140%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(200,151,63,0.45) 90deg, transparent 180deg, rgba(31,110,79,0.55) 270deg, transparent 360deg);
+  filter: blur(30px); animation: spin 18s linear infinite; opacity: 0.75;
+}
+.hero-visual::after { content: 'NexusAI'; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 6rem); font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  letter-spacing: -0.04em;
+  text-shadow: 0 4px 30px rgba(200,151,63,0.4);
+  z-index: 3; animation: float 6s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translate(-50%, -50%) translateY(0); } 50% { transform: translate(-50%, -50%) translateY(-8px); } }
+.hero-visual .badge { position: absolute; top: 24px; left: 24px; padding: 8px 14px;
+  background: rgba(13,40,24,0.7); backdrop-filter: blur(10px);
+  border: 1px solid var(--line-d-strong); border-radius: 999px;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+  z-index: 4; display: flex; align-items: center; gap: 8px;
+}
+.hero-visual .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-glow);
+  box-shadow: 0 0 10px var(--green-glow); animation: blink 1.5s ease-in-out infinite;
+}
+.hero-visual .signature { position: absolute; bottom: 24px; right: 24px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  color: var(--cream-soft); font-size: 14px; z-index: 4;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============== Section title ============== */
+.section-head { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: end; margin-bottom: 70px; position: relative; z-index: 2; }
+.section-head .num { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); font-style: italic; }
+.section-head h2 em { font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.section-head .desc { color: var(--cream-soft); max-width: 520px; }
+
+/* ============== PACKS (CRÈME LUMINEUX) ============== */
+#packs { /* hérite .bg-light */ }
+.packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; z-index: 2; }
+.pack { position: relative; padding: 44px 36px 40px; border-radius: var(--radius-l);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+  border: 1px solid var(--line-d);
+  display: flex; flex-direction: column;
+  transition: transform .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+  backdrop-filter: blur(10px);
+}
+.pack::before { content:''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, transparent 30%, var(--gold) 50%, transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity .5s var(--ease); pointer-events: none;
+}
+.pack:hover { transform: translateY(-8px); box-shadow: var(--shadow-soft); }
+.pack:hover::before { opacity: 1; }
+.pack.featured {
+  background: linear-gradient(180deg, rgba(200,151,63,0.18), rgba(31,110,79,0.10));
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+.pack.featured::after { content: 'Le plus choisi'; position: absolute; top: -12px; right: 24px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  color: #1a1208; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 999px; box-shadow: 0 8px 20px -4px rgba(200,151,63,0.5);
+}
+.pack-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 6px; color: var(--cream); }
+.pack-name em { font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.pack-tag { color: var(--cream-mute); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 28px; }
+.pack-price { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; margin-bottom: 8px; color: var(--cream); }
+.pack-price small { font-size: 0.9rem; color: var(--cream-mute); display: block; margin-bottom: 6px; font-family: 'Inter Tight', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+.pack-features { list-style: none; margin: 32px 0; flex-grow: 1; }
+.pack-features li { padding: 10px 0; border-top: 1px solid var(--line-d);
+  font-size: 14px; color: var(--cream-soft); display: flex; align-items: flex-start; gap: 10px;
+}
+.pack-features li::before { content: '─'; color: var(--gold); flex-shrink: 0; }
+.pack .btn { width: 100%; justify-content: center; }
+
+/* ============== EXEMPLES (vert sombre) ============== */
+#exemples { background: var(--green-deep); }
+.examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; position: relative; z-index: 2; max-width: 920px; margin: 0 auto; }
+.example { aspect-ratio: 3/4; border-radius: var(--radius-m); overflow: hidden; position: relative;
+  border: 1px solid var(--line-d); cursor: pointer;
+  transition: transform .5s var(--ease), border-color .5s;
+}
+.example:hover { transform: translateY(-6px); border-color: var(--gold); }
+.example::before { content:''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(13,40,24,0.96) 100%);
+  z-index: 2;
+}
+.example::after { content:''; position: absolute; inset: 0;
+  background: var(--example-bg, linear-gradient(135deg, var(--green-rich), var(--green-deep)));
+  z-index: 1;
+}
+.example .label { position: absolute; bottom: 24px; left: 24px; right: 24px; z-index: 3; }
+.example .label .num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--gold); font-style: italic; margin-bottom: 4px; display: block; }
+.example .label h3 { font-size: 1.4rem; color: var(--cream); font-weight: 400; margin-bottom: 4px; }
+.example .label p { font-size: 12px; color: var(--cream-mute); letter-spacing: 0.1em; text-transform: uppercase; }
+.example { --example-bg: radial-gradient(circle at 50% 40%, var(--green-rich), var(--green-deep)); }
+.example img.example-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 1; opacity: .9;
+}
+
+/* ============== SIMULATEUR (CRÈME) ============== */
+#simulateur { /* .bg-light */ }
+.simulator { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+  border: 1px solid var(--line-d-strong); border-radius: var(--radius-l); padding: 50px;
+  box-shadow: var(--shadow-gold), var(--shadow-green);
+  backdrop-filter: blur(10px);
+  position: relative; overflow: hidden; z-index: 2;
+}
+.simulator::before { content:''; position: absolute; top: -40%; right: -20%; width: 60%; height: 180%;
+  background: radial-gradient(circle, rgba(31,110,79,0.20) 0%, transparent 60%);
+  filter: blur(40px); pointer-events: none;
+}
+.sim-form { display: flex; flex-direction: column; gap: 28px; position: relative; z-index: 2; }
+.field-label { font-size: 12px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+.field-row { display: flex; flex-direction: column; }
+.choice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.choice { padding: 14px 10px; text-align: center; border: 1px solid var(--line-d); border-radius: 10px;
+  font-size: 13px; color: var(--cream-soft); cursor: pointer;
+  transition: all .25s var(--ease);
+  background: rgba(255,255,255,0.025); font-family: inherit; line-height: 1.3;
+}
+.choice:hover { border-color: var(--line-d-strong); color: var(--cream); background: rgba(255,255,255,0.04); }
+.choice.active {
+  background: linear-gradient(135deg, rgba(200,151,63,0.22), rgba(31,110,79,0.15));
+  border-color: var(--gold); color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,151,63,0.10);
+}
+.choice small { display: block; font-size: 11px; opacity: 0.75; margin-top: 2px; }
+
+/* Inputs sur fond clair */
+
+
+/* Inputs sur fond sombre */
+select, input[type="number"], input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width: 100%; padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line-d); border-radius: 10px;
+  color: var(--cream); font-family: inherit; font-size: 14px;
+  transition: border-color .2s, box-shadow .2s;
+}
+select:focus, input:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,151,63,0.15); }
+select { appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23c8973f' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+}
+
+.options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
+  border: 1px solid var(--line-d); border-radius: 10px; cursor: pointer;
+  transition: all .2s; font-size: 13px; color: var(--cream-soft); user-select: none;
+  background: rgba(255,255,255,0.025);
+}
+.opt:hover { border-color: var(--line-d-strong); background: rgba(255,255,255,0.04); }
+.opt input { display: none; }
+.opt .check { width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--line-d-strong);
+  flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all .2s;
+  background: rgba(255,255,255,0.04);
+}
+.opt .check::after { content: '✓'; color: #1a1208; font-size: 11px; font-weight: 700; opacity: 0; transition: opacity .2s; }
+.opt input:checked ~ .check { background: var(--gold); border-color: var(--gold); }
+.opt input:checked ~ .check::after { opacity: 1; }
+.opt-text { flex-grow: 1; }
+.opt-text small { display: block; color: var(--gold); font-size: 11px; margin-top: 2px; font-weight: 500; }
+
+.budget-slider { margin-top: 8px; }
+.slider-track { position: relative; height: 4px; background: rgba(200,151,63,0.18); border-radius: 999px; margin: 24px 0 16px; }
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px;
+  background: transparent; position: absolute; top: 0; left: 0; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  border: 2px solid var(--green-deep);
+  box-shadow: 0 0 0 1px var(--gold), 0 6px 18px rgba(200,151,63,0.5);
+  cursor: pointer; margin-top: -10px;
+}
+input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  border: 2px solid var(--green-deep); cursor: pointer;
+}
+.slider-fill { position: absolute; top: 0; left: 0; height: 100%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright));
+  border-radius: 999px; pointer-events: none; box-shadow: 0 0 12px rgba(200,151,63,0.4);
+}
+.slider-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--cream-mute); }
+
+.sim-result {
+  background: linear-gradient(180deg, var(--green-rich), var(--green-deep));
+  border: 1px solid var(--gold);
+  color: var(--cream);
+  border-radius: var(--radius-m);
+  padding: 36px 32px; position: sticky; top: 100px; height: fit-content; z-index: 2;
+  box-shadow: var(--shadow-green), 0 0 40px -10px rgba(200,151,63,0.4);
+}
+.result-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.result-total { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 400; line-height: 1; margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--cream-light), var(--gold-bright));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.result-total em { font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.result-mention { font-size: 12px; color: var(--cream-mute); margin-bottom: 24px; }
+.result-tier { padding: 12px 16px; border: 1px solid var(--line-d-strong); border-radius: 10px;
+  font-size: 13px; color: var(--cream-soft); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px; background: rgba(31,110,79,0.18);
+}
+.result-tier strong { color: var(--gold); font-weight: 500; }
+.result-lines { border-top: 1px solid var(--line-d); padding-top: 16px; margin-bottom: 24px;
+  max-height: 240px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--gold-deep) transparent;
+}
+.result-lines::-webkit-scrollbar { width: 4px; }
+.result-lines::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 2px; }
+.result-line { display: flex; justify-content: space-between; padding: 8px 0;
+  font-size: 13px; border-bottom: 1px dashed var(--line-d);
+}
+.result-line:last-child { border: none; }
+.result-line span:first-child { color: var(--cream-soft); }
+.result-line span:last-child { color: var(--gold); font-weight: 500; }
+.result-actions { display: flex; flex-direction: column; gap: 10px; }
+.result-actions .btn { width: 100%; justify-content: center; }
+.result-reset { background: none; border: none; color: var(--cream-mute);
+  font-size: 12px; text-decoration: underline; cursor: pointer; margin-top: 8px; font-family: inherit;
+}
+.result-reset:hover { color: var(--gold); }
+
+/* ============== AVIS (CRÈME) ============== */
+#avis { /* .bg-light */ }
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; position: relative; z-index: 2; max-width: 920px; margin: 0 auto; }
+.testimonial { padding: 36px 30px; border: 1px solid var(--line-d); border-radius: var(--radius-m);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: transform .5s var(--ease), border-color .5s;
+}
+.testimonial:hover { transform: translateY(-4px); border-color: var(--line-d-strong); }
+.testimonial::before { content: '"'; position: absolute; top: 12px; left: 18px;
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 1;
+  color: var(--gold); opacity: 0.3;
+}
+.stars { color: var(--gold); margin-bottom: 16px; letter-spacing: 4px; font-size: 14px; }
+.testimonial p { color: var(--cream); font-size: 15px; line-height: 1.55; margin-bottom: 22px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+}
+.testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line-d); }
+.author-avatar { width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+  color: #1a1208; display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(200,151,63,0.3);
+}
+.author-info strong { display: block; font-size: 14px; color: var(--cream); }
+.author-info span { display: block; font-size: 12px; color: var(--cream-mute); }
+
+.trust-bar { margin-top: 70px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  padding: 36px 32px; border: 1px solid var(--line-d-strong);
+  border-radius: var(--radius-m);
+  background: linear-gradient(180deg, rgba(200,151,63,0.10), rgba(31,110,79,0.10));
+  backdrop-filter: blur(10px);
+  position: relative; z-index: 2;
+}
+.trust-item { text-align: center; }
+.trust-item strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 4px; font-weight: 400;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.trust-item span { font-size: 11px; color: var(--cream-mute); letter-spacing: 0.15em; text-transform: uppercase; }
+
+/* ============== CONTACT (vert sombre) ============== */
+#contact { background: var(--green-deep); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; position: relative; z-index: 2; }
+.contact-info { padding-right: 20px; }
+.contact-info h2 { margin-bottom: 28px; }
+.contact-info p { color: var(--cream-soft); margin-bottom: 36px; }
+.contact-channels { display: flex; flex-direction: column; gap: 14px; }
+.channel { display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+  border: 1px solid var(--line-d); border-radius: var(--radius-s);
+  text-decoration: none; color: var(--cream); transition: all .25s;
+  background: rgba(255,255,255,0.025);
+}
+.channel:hover { border-color: var(--gold); background: rgba(200,151,63,0.08); transform: translateX(4px); }
+.channel-icon { width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(200,151,63,0.20), rgba(31,110,79,0.20));
+  color: var(--gold); flex-shrink: 0; border: 1px solid var(--line-d-strong);
+}
+.channel-text { flex-grow: 1; }
+.channel-text strong { display: block; font-size: 14px; font-weight: 500; }
+.channel-text span { display: block; font-size: 12px; color: var(--cream-mute); }
+.channel-arrow { color: var(--gold); transition: transform .3s; }
+.channel:hover .channel-arrow { transform: translateX(4px); }
+
+.questionnaire { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--line-d-strong); border-radius: var(--radius-l); padding: 44px;
+  backdrop-filter: blur(10px); position: relative; overflow: hidden;
+}
+.questionnaire::before { content:''; position: absolute; top: -30%; right: -20%; width: 50%; height: 100%;
+  background: radial-gradient(circle, rgba(200,151,63,0.12) 0%, transparent 60%);
+  filter: blur(40px); pointer-events: none;
+}
+.q-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 6px; position: relative; z-index: 2; }
+.q-title em { font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.q-subtitle { color: var(--cream-mute); font-size: 13px; margin-bottom: 32px; position: relative; z-index: 2; }
+.q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; z-index: 2; }
+.q-grid .full { grid-column: 1 / -1; }
+.q-field label { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-mute); margin-bottom: 8px; }
+textarea { resize: vertical; min-height: 90px; font-family: inherit; }
+.q-submit { margin-top: 28px; position: relative; z-index: 2; }
+
+/* ============== CTA FINAL (vert profond + halo) ============== */
+.final-cta { text-align: center; padding: 110px 0;
+  background: var(--green-deep);
+  border-top: 1px solid var(--line-d); position: relative; overflow: hidden;
+}
+.final-cta::before { content:''; position: absolute; top: 50%; left: 50%; width: 80vw; height: 80vw;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, transparent, rgba(200,151,63,0.10), transparent, rgba(31,110,79,0.12), transparent);
+  animation: spin 30s linear infinite; pointer-events: none; filter: blur(40px);
+}
+.final-cta .wrap { position: relative; z-index: 2; }
+.final-cta h2 { margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; color: var(--cream); }
+.final-cta h2 em { font-style: italic;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.final-cta p { color: var(--cream-soft); max-width: 600px; margin: 0 auto 40px; }
+.final-cta .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ============== FOOTER ============== */
+footer { padding: 60px 0 30px; background: #061711; border-top: 1px solid var(--line-d); position: relative; z-index: 2; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.foot-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 14px; color: var(--cream); }
+.foot-logo span {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-style: italic;
+}
+footer p, footer a { font-size: 13px; color: var(--cream-mute); text-decoration: none; line-height: 1.8; }
+footer a:hover { color: var(--gold); }
+footer h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 14px; font-weight: 500; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-bottom { padding-top: 24px; border-top: 1px solid var(--line-d);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  font-size: 12px; color: var(--cream-mute);
+}
+
+/* FAB WhatsApp */
+.fab-wa { position: fixed; bottom: 24px; right: 24px; width: 58px; height: 58px; border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e); color: white;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  z-index: 90; transition: transform .3s var(--ease); text-decoration: none;
+  animation: pulse-wa 3s infinite;
+}
+.fab-wa:hover { transform: scale(1.1) rotate(-5deg); }
+@keyframes pulse-wa {
+  0%,100% { box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+  50%     { box-shadow: 0 8px 30px rgba(37,211,102,0.5), 0 0 0 16px rgba(37,211,102,0); }
+}
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 50px; }
+  .hero-visual { max-width: 420px; margin: 0 auto; }
+  .section-head { grid-template-columns: 1fr; gap: 24px; }
+  .packs { grid-template-columns: 1fr; }
+  .examples { grid-template-columns: repeat(2, 1fr); }
+  .simulator { grid-template-columns: 1fr; padding: 32px; gap: 36px; }
+  .sim-result { position: static; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .testimonials { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .trust-bar { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(13,40,24,0.98); backdrop-filter: blur(14px);
+    flex-direction: column; padding: 24px; gap: 18px; border-bottom: 1px solid var(--line-d);
+  }
+  .nav-links.open { display: flex; }
+  .menu-toggle { display: block; }
+  .hero-meta { gap: 28px; }
+  .q-grid { grid-template-columns: 1fr; }
+  .options-grid { grid-template-columns: 1fr; }
+  .choice-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .examples { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .trust-bar { grid-template-columns: 1fr; }
+  .hero { padding-top: 110px; }
+  .questionnaire { padding: 28px 20px; }
+  .simulator { padding: 24px 18px; }
+  .pack { padding: 32px 24px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="aura-1"></div>
+<div class="aura-2"></div>
+<div class="aura-3"></div>
+
+<!-- NAV -->
+<nav class="top" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="logo-dot"></span>Nexus<span>AI</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#packs">Offres</a>
+      <a href="#exemples">Réalisations</a>
+      <a href="#simulateur">Simulateur</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact" class="btn btn-ghost" style="padding:10px 20px;font-size:13px;">Demander un devis</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- ████ HERO (vert sombre) ████ -->
+<section class="hero" id="hero">
+  <div class="hero-conic"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow">Agence digitale premium</span>
+      <h1 class="display">Le digital <em>premium</em><br/>conçu pour votre business.</h1>
+      <p class="lead">NexusAI Agency crée des landing pages, sites web, boutiques Shopify, applications, automatisations et solutions IA pensées pour aider les marques et entreprises à mieux présenter leur activité, mieux convertir et mieux s'organiser.</p>
+      <div class="hero-ctas">
+        <a href="#simulateur" class="btn btn-primary">Estimer mon projet
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#packs" class="btn btn-ghost">Voir les offres</a>
+        <a href="#" id="waBtnHero" class="btn btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="stat"><strong>-50%</strong><span>Offre de lancement</span></div>
+        <div class="stat"><strong>72h</strong><span>Premier livrable</span></div>
+        <div class="stat"><strong>5★</strong><span>Note client vérifié</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="badge"><span class="badge-dot"></span>En ligne — Disponible</div>
+      <div class="orbe orbe-1"></div>
+      <div class="orbe orbe-2"></div>
+      <div class="orbe orbe-3"></div>
+      <div class="signature">— studio</div>
+    </div>
+  </div>
+</section>
+<!-- ░░░ PACKS (CRÈME) ░░░ -->
+<section id="packs" class="bg-light">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="num">— 01 / Offres</span>
+        <h2 class="display" style="margin-top:14px;">Trois <em>packs</em>,<br/>un même standard.</h2>
+      </div>
+      <p class="desc">Chaque pack peut être 100% sur mesure. Le but reste le même : un rendu premium, une expérience pensée pour la conversion, une livraison clé en main.</p>
+    </div>
+
+    <div class="launch-banner reveal" style="margin: 0 0 32px; padding: 18px 24px; background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%); color: #0d2818; border-radius: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; box-shadow: 0 8px 32px rgba(212, 175, 55, 0.25);">
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+        <span style="background:#0d2818; color:#d4af37; padding:6px 12px; border-radius:8px; font-weight:700; font-size:13px; letter-spacing:0.5px;">OFFRE DE LANCEMENT</span>
+        <strong style="font-size:16px;">-50% sur les 5 premières missions</strong>
+        <span style="opacity:0.85; font-size:14px;">en échange d'un retour client public</span>
+      </div>
+      <a href="#contact" style="background:#0d2818; color:#d4af37; padding:10px 20px; border-radius:10px; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Réserver une place →</a>
+    </div>
+
+    <div class="packs">
+      <div class="pack reveal">
+        <div class="pack-name">Pack <em>Start</em></div>
+        <div class="pack-tag">Lancer une présence solide</div>
+        <div class="pack-price"><small data-pack="start-from">À partir de</small><span data-pack="start-price">2 500 €</span></div>
+        <ul class="pack-features">
+          <li>Landing page ou mini site</li>
+          <li>Design responsive premium</li>
+          <li>Formulaire de contact</li>
+          <li>Bouton WhatsApp intégré</li>
+          <li>Livraison clé en main</li>
+          <li>Maintenance en option</li>
+        </ul>
+        <a href="#simulateur" class="btn btn-ghost">Estimer ce pack</a>
+      </div>
+
+      <div class="pack featured reveal">
+        <div class="pack-name">Pack <em>Business</em></div>
+        <div class="pack-tag">Crédibiliser et convertir</div>
+        <div class="pack-price"><small data-pack="business-from">À partir de</small><span data-pack="business-price">3 500 €</span></div>
+        <ul class="pack-features">
+          <li>Site vitrine 3 à 5 pages</li>
+          <li>Design sur mesure</li>
+          <li>Parcours utilisateur optimisé</li>
+          <li>Automatisation simple incluse</li>
+          <li>1 mois de maintenance offerte</li>
+          <li>Bouton WhatsApp + RDV</li>
+        </ul>
+        <a href="#simulateur" class="btn btn-primary">Estimer ce pack</a>
+      </div>
+
+      <div class="pack reveal">
+        <div class="pack-name">Pack <em>Premium</em></div>
+        <div class="pack-tag">Solution complète & IA</div>
+        <div class="pack-price"><small data-pack="premium-from">Sur devis dès</small><span data-pack="premium-price">6 000 €</span></div>
+        <ul class="pack-features">
+          <li>Site premium ou app légère</li>
+          <li>Design haut de gamme</li>
+          <li>Automatisation avancée</li>
+          <li>Intégration IA (simple ou avancée)</li>
+          <li>3 mois de maintenance inclus</li>
+          <li>Suivi & accompagnement dédié</li>
+        </ul>
+        <a href="#simulateur" class="btn btn-ghost">Estimer ce pack</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ████ EXEMPLES (vert) ████ -->
+<section id="exemples">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="num">— 02 / Réalisations</span>
+        <h2 class="display" style="margin-top:14px;">Dernière <em>livraison</em>.</h2>
+      </div>
+      <p class="desc">Un projet livré qui a son contexte, ses contraintes et son objectif business — d'autres réalisations sont en cours.</p>
+    </div>
+
+    <div class="examples" id="examplesGrid"></div>
+  </div>
+</section>
+<!-- ░░░ SIMULATEUR (CRÈME) ░░░ -->
+<section id="simulateur" class="bg-light">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="num">— 03 / Simulateur</span>
+        <h2 class="display" style="margin-top:14px;">Estimez votre <em>budget</em><br/>en 2 minutes.</h2>
+      </div>
+      <p class="desc">Une estimation transparente, ligne par ligne. Cet outil donne une fourchette indicative, le devis final est ajusté après échange.</p>
+    </div>
+
+    <div class="simulator reveal">
+      <div class="sim-form">
+        <div class="field-row">
+          <div class="field-label">Type de projet</div>
+          <div class="choice-grid" id="projectType"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">Pages / écrans supplémentaires</div>
+          <input type="number" id="extraPages" min="0" max="50" value="0" />
+        </div>
+        <div class="field-row">
+          <div class="field-label">Niveau de design</div>
+          <div class="choice-grid" id="designLevel"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">Niveau d'urgence</div>
+          <div class="choice-grid" id="urgency"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">Options & intégrations</div>
+          <div class="options-grid" id="options"></div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">Maintenance</div>
+          <div class="choice-grid" id="maintMode">
+            <button class="choice active" data-key="none">Sans</button>
+            <button class="choice" data-key="monthly">Mensuelle</button>
+            <button class="choice" data-key="yearly">Annuelle</button>
+          </div>
+          <div class="choice-grid" id="maintPlan" style="margin-top:8px;display:none;">
+            <button class="choice active" data-key="essential">Essentielle</button>
+            <button class="choice" data-key="standard">Standard</button>
+            <button class="choice" data-key="premium">Premium</button>
+          </div>
+        </div>
+        <div class="field-row budget-slider">
+          <div class="field-label">Ajustement manuel du budget</div>
+          <div class="slider-track">
+            <div class="slider-fill" id="sliderFill"></div>
+            <input type="range" id="budgetSlider" />
+          </div>
+          <div class="slider-meta"><span id="sliderMin">2 500 €</span><span id="sliderValue">2 500 €</span><span id="sliderMax">50 000 €</span></div>
+        </div>
+      </div>
+
+      <aside class="sim-result">
+        <div class="result-label">Budget total estimé</div>
+        <div class="result-total" id="resultTotal">2 500<em> €</em></div>
+        <div class="result-mention">Estimation indicative — confirmée après échange.</div>
+
+        <div class="result-tier">
+          <span style="color:var(--gold);font-size:1.2rem;">◆</span>
+          Positionnement : <strong id="tierLabel">Base</strong>
+        </div>
+
+        <div class="result-lines" id="resultLines"></div>
+
+        <div class="result-actions">
+          <a href="#contact" class="btn btn-primary">Demander un devis détaillé
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" id="waBtnSim" class="btn btn-wa" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            En parler sur WhatsApp
+          </a>
+          <button class="result-reset" id="resetBtn">Réinitialiser le simulateur</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ AVIS (CRÈME) ░░░ -->
+<section id="avis" class="bg-light">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="num">— 04 / Avis</span>
+        <h2 class="display" style="margin-top:14px;">Ils nous ont fait <em>confiance</em>.</h2>
+      </div>
+      <p class="desc">Le retour direct des entrepreneurs et structures qui ont confié leur projet digital à NexusAI Agency.</p>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial reveal">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>Résultat à la hauteur des attentes. Le rendu est haut de gamme, le suivi a été nickel et le site convertit déjà mieux que l'ancien dès la première semaine.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">W</div>
+          <div class="author-info"><strong>Wassou Multiservices</strong><span>Site vitrine clé en main</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-bar reveal">
+      <div class="trust-item"><strong>-50%</strong><span>Offre de lancement · 5 places</span></div>
+      <div class="trust-item"><strong>5★</strong><span>Note client vérifié</span></div>
+      <div class="trust-item"><strong>72h</strong><span>1<sup>er</sup> retour client</span></div>
+      <div class="trust-item"><strong>100%</strong><span>Clé en main</span></div>
+    </div>
+  </div>
+</section>
+<!-- ████ CONTACT (vert sombre) ████ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">— 05 / Contact</span>
+        <h2 class="display" style="margin-top:18px;color:var(--cream);">Parlons de votre <em>projet</em>.</h2>
+        <p>Un échange suffit pour cadrer vos besoins, vous orienter vers la bonne formule et vous proposer un devis transparent. Choisissez le canal qui vous convient.</p>
+
+        <div class="contact-channels">
+          <a href="#" id="waChannel" class="channel" target="_blank">
+            <div class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></div>
+            <div class="channel-text"><strong>WhatsApp</strong><span>Réponse rapide en journée</span></div>
+            <div class="channel-arrow">→</div>
+          </a>
+          <a href="#" id="emailChannel" class="channel">
+            <div class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></div>
+            <div class="channel-text"><strong id="emailLabel">contact@nexusai-agency.com</strong><span>Pour les briefs détaillés</span></div>
+            <div class="channel-arrow">→</div>
+          </a>
+          <a href="#" class="channel">
+            <div class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div class="channel-text"><strong>Prendre rendez-vous</strong><span>Visio de découverte — 30 min</span></div>
+            <div class="channel-arrow">→</div>
+          </a>
+        </div>
+      </div>
+
+      <form class="questionnaire reveal" id="questForm">
+        <div class="q-title">Questionnaire <em>découverte</em></div>
+        <div class="q-subtitle">Plus vos réponses sont précises, plus le devis sera juste.</div>
+
+        <div class="q-grid">
+          <div class="q-field"><label>Nom complet</label><input type="text" name="name" required placeholder="Jean Dupont" /></div>
+          <div class="q-field"><label>Email</label><input type="email" name="email" required placeholder="vous@email.com" /></div>
+          <div class="q-field"><label>Téléphone / WhatsApp</label><input type="tel" name="phone" placeholder="+33 6 ..." /></div>
+          <div class="q-field"><label>Entreprise</label><input type="text" name="company" placeholder="Nom de votre activité" /></div>
+          <div class="q-field"><label>Type de projet</label>
+            <select name="project">
+              <option>Landing page</option><option>Site vitrine</option><option>Site business premium</option>
+              <option>Shopify</option><option>Application web</option><option>Application mobile</option>
+              <option>Mobile + web</option><option>Solution IA / automatisation</option><option>Autre</option>
+            </select>
+          </div>
+          <div class="q-field"><label>Nombre de pages / écrans</label>
+            <select name="pages">
+              <option>1 page</option><option>3 pages</option><option>5 pages</option>
+              <option>8–10 pages</option><option>10+ pages</option><option>App / écrans multiples</option>
+            </select>
+          </div>
+          <div class="q-field"><label>Identité visuelle ?</label>
+            <select name="identity"><option>Oui, complète</option><option>Partiellement</option><option>Non, à créer</option></select>
+          </div>
+          <div class="q-field"><label>IA souhaitée ?</label>
+            <select name="ai"><option>Aucune</option><option>IA simple</option><option>IA avancée</option></select>
+          </div>
+          <div class="q-field"><label>Délai souhaité</label>
+            <select name="delay"><option>Standard</option><option>Rapide</option><option>Urgent</option></select>
+          </div>
+          <div class="q-field"><label>Budget estimatif</label>
+            <select name="budget">
+              <option>2 500 € – 5 000 €</option><option>5 000 € – 10 000 €</option>
+              <option>10 000 € – 20 000 €</option><option>20 000 € – 50 000 €</option>
+              <option>50 000 € +</option><option>À définir ensemble</option>
+            </select>
+          </div>
+          <div class="q-field full"><label>Objectif principal</label>
+            <select name="goal">
+              <option>Visibilité / image</option><option>Ventes / e-commerce</option>
+              <option>Génération de leads</option><option>Réservation / RDV</option>
+              <option>Automatisation interne</option><option>Gestion / dashboard</option><option>Autre</option>
+            </select>
+          </div>
+          <div class="q-field full"><label>Décrivez votre projet</label>
+            <textarea name="message" placeholder="Contexte, fonctionnalités attendues, références d'inspiration..."></textarea>
+          </div>
+        </div>
+
+        <div class="q-submit">
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Envoyer ma demande
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ████ CTA FINAL ████ -->
+<section class="final-cta reveal">
+  <div class="wrap">
+    <span class="eyebrow">— Prêt à lancer votre projet ?</span>
+    <h2 class="display" style="margin-top:24px;">Une idée. Un besoin. <em>Un projet à lancer ?</em></h2>
+    <p>Nous vous aidons à choisir la solution la plus adaptée à votre activité, votre budget et vos objectifs.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary">Demander un devis</a>
+      <a href="#contact" class="btn btn-ghost">Prendre rendez-vous</a>
+      <a href="#" id="waBtnFinal" class="btn btn-wa" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">Nexus<span>AI</span></div>
+        <p>Le digital premium conçu pour votre business. Landing pages, sites, applications, IA et automatisations sur mesure.</p>
+      </div>
+      <div><h4>Offres</h4><div class="footer-links"><a href="#packs">Pack Start</a><a href="#packs">Pack Business</a><a href="#packs">Pack Premium</a><a href="#simulateur">Simulateur de prix</a></div></div>
+      <div><h4>Agence</h4><div class="footer-links"><a href="#exemples">Réalisations</a><a href="#avis">Avis clients</a><a href="#contact">Contact</a></div></div>
+      <div><h4>Contact</h4><div class="footer-links"><a href="#" id="emailFooter">contact@nexusai-agency.com</a><a href="#" id="waFooter">WhatsApp</a><a href="#contact">Prendre rendez-vous</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 NexusAI Agency. Tous droits réservés.</span><span>Mentions légales · Confidentialité</span></div>
+  </div>
+</footer>
+
+<a href="#" id="fabWa" class="fab-wa" target="_blank" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   ✦ MODIFIE TES TARIFS ICI ✦
+   Toute la logique du site lit ce bloc.
+   ════════════════════════════════════════════════════════════ */
+/* ============================================================
+   NEXUSAI AGENCY — FICHIER DE CONFIGURATION
+   ────────────────────────────────────────────────────────────
+   ✦ MODIFIE TES TARIFS ICI ET NULLE PART AILLEURS ✦
+   Tout le simulateur, les boutons WhatsApp et l'affichage
+   des packs lisent ce fichier. Sauvegarde et recharge la page.
+   ============================================================ */
+
+window.PRICING_CONFIG = {
+
+  /* ───────────────────────────────────────────────────
+     1) NUMÉRO WHATSAPP
+     Format international, sans + ni espaces
+     Ex : France +33 6 12 34 56 78  ➜  '33612345678'
+     ─────────────────────────────────────────────────── */
+  whatsappNumber: '33600000000',
+
+  /* ───────────────────────────────────────────────────
+     2) EMAIL DE CONTACT
+     ─────────────────────────────────────────────────── */
+  contactEmail: 'contact@nexusai-agency.com',
+
+  /* ───────────────────────────────────────────────────
+     3) PRIX DE BASE (point de départ de chaque type de projet)
+     ─────────────────────────────────────────────────── */
+  basePrices: {
+    landing:      1500,   // Landing page premium
+    site3:        1900,   // Site vitrine 3 pages
+    site5:        2500,   // Site vitrine 5 pages
+    site10:       3000,   // Site vitrine 8–10 pages
+    sitePremium:  5200,   // Site Business premium
+    shopify:      2900,   // Shopify clé en main
+    webapp:       4000,   // Application web sur mesure
+    mobile:      6000,   // Application mobile
+    mobileweb:   10000    // Application mobile + site web
+  },
+
+  /* ───────────────────────────────────────────────────
+     4) PRIX DES PAGES / ÉCRANS SUPPLÉMENTAIRES
+     Selon la "famille" du projet
+     ─────────────────────────────────────────────────── */
+  extraPagePrice: {
+    site:      200,   // par page sup. (sites vitrines, landing, business)
+    shopify:   300,
+    webapp:    500,
+    mobile:    900,
+    mobileweb: 1000
+  },
+
+  /* ───────────────────────────────────────────────────
+     5) NIVEAUX DE DESIGN (suppléments)
+     ─────────────────────────────────────────────────── */
+  designLevels: {
+    standard: 0,
+    premium:  800,
+    luxury:   1800
+  },
+
+  /* ───────────────────────────────────────────────────
+     6) URGENCE / DÉLAI (suppléments)
+     ─────────────────────────────────────────────────── */
+  urgency: {
+    normal: 0,
+    fast:   600,
+    urgent: 1500
+  },
+
+  /* ───────────────────────────────────────────────────
+     7) OPTIONS & INTÉGRATIONS
+     ─────────────────────────────────────────────────── */
+  options: {
+    seo:                250,   // SEO de base
+    copywriting:        450,   // Rédaction
+    booking:            500,   // Prise de RDV / calendrier
+    whatsappAutomation: 1000,  // Automatisation WhatsApp / réseaux
+    ecommerce:          1300,  // E-commerce / paiement
+    dashboard:          2000,  // Dashboard / espace membre
+    aiSimple:           2600,  // IA simple (chatbot / assistant)
+    aiAdvanced:         3600   // IA avancée (agent métier / CRM)
+  },
+
+  /* ───────────────────────────────────────────────────
+     8) MAINTENANCE — MENSUELLE (€ / mois)
+     ─────────────────────────────────────────────────── */
+  maintenanceMonthly: {
+    none:      0,
+    essential: 59,
+    standard:  150,
+    premium:   200
+  },
+
+  /* ───────────────────────────────────────────────────
+     9) MAINTENANCE — ANNUELLE (€ / an)
+     ─────────────────────────────────────────────────── */
+  maintenanceYearly: {
+    none:      0,
+    essential: 650,
+    standard:  1440,
+    premium:   1990
+  },
+
+  /* ───────────────────────────────────────────────────
+     10) SLIDER D'AJUSTEMENT MANUEL
+     ─────────────────────────────────────────────────── */
+  slider: {
+    min:          2000,
+    max:         50000,
+    step:          100,
+    defaultValue: 2500
+  },
+
+  /* ───────────────────────────────────────────────────
+     11) PALIERS DE POSITIONNEMENT
+     Ces seuils déterminent l'étiquette affichée à côté
+     du prix total (Base / Structuré / Avancé / Premium).
+     ─────────────────────────────────────────────────── */
+  tiers: [
+    { max: 4000,    label: 'Base'       },
+    { max: 8000,    label: 'Structuré'  },
+    { max: 16000,   label: 'Avancé'     },
+    { max: Infinity, label: 'Premium'   }
+  ],
+
+  /* ───────────────────────────────────────────────────
+     12) PRIX AFFICHÉS DANS LES PACKS (zone "Offres")
+     Tu peux modifier le texte affiché ici sans casser
+     la logique du simulateur.
+     ─────────────────────────────────────────────────── */
+  packs: {
+    start:    { from: 'À partir de',  price: '1500 €' },
+    business: { from: 'À partir de',  price: '2500 €' },
+    premium:  { from: 'Sur devis dès', price: '3400 €' }
+  },
+
+  /* ───────────────────────────────────────────────────
+     13) RÉALISATIONS / TRAVAUX RÉCENTS
+     Pour chaque carte :
+       - tag    : petit label en italique au-dessus du titre
+       - title  : nom du projet
+       - desc   : description courte (catégorie + année)
+       - image  : URL de l'image (ou laisse vide '' pour un fond dégradé doré/vert)
+     Pour AJOUTER un projet : copie un objet et colle-le dans le tableau.
+     Pour SUPPRIMER : enlève l'objet entier (avec les accolades).
+     ─────────────────────────────────────────────────── */
+  realisations: [
+    {
+      tag:   'Multiservices',
+      title: 'Wassou Multiservices',
+      desc:  'Site vitrine · 2025',
+      image: ''   // ← mets ici l'URL d'une photo, ex : 'images/wassou.jpg' ou 'https://...'
+    }
+  ],
+
+  /* ═══════════════════════════════════════════════════
+     ⚠️ NE MODIFIE PAS LES BLOCS CI-DESSOUS
+     (ce sont des libellés techniques utilisés par le simulateur)
+     ═══════════════════════════════════════════════════ */
+  projectFamily: {
+    landing: 'site', site3: 'site', site5: 'site', site10: 'site',
+    sitePremium: 'site', shopify: 'shopify', webapp: 'webapp',
+    mobile: 'mobile', mobileweb: 'mobileweb'
+  },
+  projectLabels: {
+    landing: 'Landing page',
+    site3: 'Site vitrine 3 pages',
+    site5: 'Site vitrine 5 pages',
+    site10: 'Site vitrine 8–10 pages',
+    sitePremium: 'Site Business premium',
+    shopify: 'Shopify clé en main',
+    webapp: 'Application web sur mesure',
+    mobile: 'Application mobile',
+    mobileweb: 'Application mobile + site web'
+  },
+  optionLabels: {
+    seo: 'SEO de base',
+    copywriting: 'Copywriting',
+    booking: 'Prise de RDV',
+    whatsappAutomation: 'Automatisation WhatsApp',
+    ecommerce: 'E-commerce / paiement',
+    dashboard: 'Dashboard / espace membre',
+    aiSimple: 'IA simple',
+    aiAdvanced: 'IA avancée'
+  },
+  designLabels:  { standard: 'Design standard', premium: 'Design premium', luxury: 'Design luxury' },
+  urgencyLabels: { normal: 'Délai normal', fast: 'Délai rapide', urgent: 'Délai urgent' },
+  maintLabels:   { essential: 'Maintenance Essentielle', standard: 'Maintenance Standard', premium: 'Maintenance Premium' }
+};
+
+</script>
+<script>
+(function(){
+  const C = window.PRICING_CONFIG;
+  if (!C) { console.error('config.js introuvable.'); return; }
+  const fmt = n => new Intl.NumberFormat('fr-FR').format(Math.round(n));
+
+  // Construction dynamique
+  const projectTypeEl = document.getElementById('projectType');
+  Object.keys(C.basePrices).forEach((k, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (i === 0 ? ' active' : '');
+    btn.dataset.key = k;
+    btn.innerHTML = `${C.projectLabels[k]}<small>${fmt(C.basePrices[k])} €${i === 0 ? '' : ' +'}</small>`;
+    projectTypeEl.appendChild(btn);
+  });
+
+  const designEl = document.getElementById('designLevel');
+  Object.keys(C.designLevels).forEach((k, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (i === 0 ? ' active' : '');
+    btn.dataset.key = k;
+    const v = C.designLevels[k];
+    const lbl = C.designLabels[k].replace('Design ', '').replace(/^./, c => c.toUpperCase());
+    btn.innerHTML = `${lbl}<small>${v === 0 ? '+0 €' : '+' + fmt(v) + ' €'}</small>`;
+    designEl.appendChild(btn);
+  });
+
+  const urgEl = document.getElementById('urgency');
+  Object.keys(C.urgency).forEach((k, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (i === 0 ? ' active' : '');
+    btn.dataset.key = k;
+    const v = C.urgency[k];
+    const labels = { normal: 'Normal', fast: 'Rapide', urgent: 'Urgent' };
+    btn.innerHTML = `${labels[k] || k}<small>${v === 0 ? '+0 €' : '+' + fmt(v) + ' €'}</small>`;
+    urgEl.appendChild(btn);
+  });
+
+  const optsEl = document.getElementById('options');
+  Object.keys(C.options).forEach(k => {
+    const lbl = document.createElement('label');
+    lbl.className = 'opt';
+    lbl.innerHTML = `<input type="checkbox" data-key="${k}"><span class="check"></span><span class="opt-text">${C.optionLabels[k]}<small>+${fmt(C.options[k])} €</small></span>`;
+    optsEl.appendChild(lbl);
+  });
+
+  // RÉALISATIONS — construction dynamique
+  const examplesGrid = document.getElementById('examplesGrid');
+  if (examplesGrid && Array.isArray(C.realisations)) {
+    examplesGrid.innerHTML = '';
+    C.realisations.forEach(r => {
+      const div = document.createElement('div');
+      div.className = 'example reveal';
+      const imgHtml = r.image ? `<img class="example-img" src="${r.image}" alt="${r.title}" loading="lazy">` : '';
+      div.innerHTML = `
+        ${imgHtml}
+        <div class="label">
+          <span class="num">— ${r.tag || ''}</span>
+          <h3>${r.title || ''}</h3>
+          <p>${r.desc || ''}</p>
+        </div>
+      `;
+      examplesGrid.appendChild(div);
+    });
+  }
+
+  const slider = document.getElementById('budgetSlider');
+  slider.min = C.slider.min; slider.max = C.slider.max;
+  slider.step = C.slider.step; slider.value = C.slider.defaultValue;
+  document.getElementById('sliderMin').textContent = fmt(C.slider.min) + ' €';
+  document.getElementById('sliderMax').textContent = fmt(C.slider.max) + ' €';
+
+  const setPack = (k, v, w) => { const el = document.querySelector(`[data-pack="${k}-${w}"]`); if (el) el.textContent = v; };
+  if (C.packs) {
+    ['start','business','premium'].forEach(k => {
+      if (C.packs[k]) { setPack(k, C.packs[k].from, 'from'); setPack(k, C.packs[k].price, 'price'); }
+    });
+  }
+
+  if (C.contactEmail) {
+    const eL = document.getElementById('emailLabel'); if (eL) eL.textContent = C.contactEmail;
+    const eC = document.getElementById('emailChannel'); if (eC) eC.href = 'mailto:' + C.contactEmail;
+    const eF = document.getElementById('emailFooter'); if (eF) { eF.href = 'mailto:' + C.contactEmail; eF.textContent = C.contactEmail; }
+  }
+
+  const firstKey = obj => Object.keys(obj)[0];
+  const state = {
+    projectType: firstKey(C.basePrices),
+    extraPages: 0,
+    designLevel: firstKey(C.designLevels),
+    urgency: firstKey(C.urgency),
+    selectedOptions: [],
+    maintenanceMode: 'none',
+    maintenancePlan: 'essential',
+    _sliderTouched: false
+  };
+
+  function calculatePrice(s) {
+    let total = 0; const lines = [];
+    const base = C.basePrices[s.projectType] || 0;
+    total += base; lines.push({ label: C.projectLabels[s.projectType], amount: base });
+    const designAmt = C.designLevels[s.designLevel] || 0;
+    if (designAmt > 0) { total += designAmt; lines.push({ label: C.designLabels[s.designLevel], amount: designAmt }); }
+    const urgAmt = C.urgency[s.urgency] || 0;
+    const urgencyLabels = { normal: 'Délai normal', fast: 'Délai rapide', urgent: 'Délai urgent' };
+    if (urgAmt > 0) { total += urgAmt; lines.push({ label: urgencyLabels[s.urgency] || s.urgency, amount: urgAmt }); }
+    if (s.extraPages > 0) {
+      const fam = C.projectFamily[s.projectType];
+      const perPage = C.extraPagePrice[fam] || 0;
+      const extraAmt = s.extraPages * perPage;
+      total += extraAmt; lines.push({ label: `${s.extraPages} page(s) sup.`, amount: extraAmt });
+    }
+    s.selectedOptions.forEach(o => {
+      const v = C.options[o] || 0;
+      if (v) { total += v; lines.push({ label: C.optionLabels[o], amount: v }); }
+    });
+    if (s.maintenanceMode === 'monthly') {
+      const v = C.maintenanceMonthly[s.maintenancePlan] || 0;
+      if (v) { total += v; lines.push({ label: `${C.maintLabels[s.maintenancePlan]} (1er mois)`, amount: v }); }
+    }
+    if (s.maintenanceMode === 'yearly') {
+      const v = C.maintenanceYearly[s.maintenancePlan] || 0;
+      if (v) { total += v; lines.push({ label: `${C.maintLabels[s.maintenancePlan]} (1 an)`, amount: v }); }
+    }
+    return { total, lines };
+  }
+
+  function tierFromTotal(t) {
+    const tiers = C.tiers || [
+      { max: 4000, label: 'Base' }, { max: 8000, label: 'Structuré' },
+      { max: 16000, label: 'Avancé' }, { max: Infinity, label: 'Premium' }
+    ];
+    for (const tier of tiers) { if (t < tier.max) return tier; }
+    return tiers[tiers.length - 1];
+  }
+
+  function render() {
+    const { total, lines } = calculatePrice(state);
+    document.getElementById('resultTotal').innerHTML = fmt(total) + '<em> €</em>';
+    const tier = tierFromTotal(total);
+    document.getElementById('tierLabel').textContent = tier.label;
+    document.getElementById('resultLines').innerHTML = lines.map(l =>
+      `<div class="result-line"><span>${l.label}</span><span>+${fmt(l.amount)} €</span></div>`
+    ).join('');
+
+    const fill = document.getElementById('sliderFill');
+    if (!state._sliderTouched) {
+      slider.value = Math.min(Math.max(total, C.slider.min), C.slider.max);
+    }
+    const pct = ((slider.value - C.slider.min) / (C.slider.max - C.slider.min)) * 100;
+    fill.style.width = pct + '%';
+    document.getElementById('sliderValue').textContent = fmt(slider.value) + ' €';
+    updateWhatsAppLinks(total, tier.label);
+  }
+
+  function updateWhatsAppLinks(total, tier) {
+    const optsTxt = state.selectedOptions.length ? state.selectedOptions.map(o => C.optionLabels[o]).join(', ') : 'aucune';
+    const maintTxt = state.maintenanceMode === 'none' ? 'aucune' : `${state.maintenanceMode} / ${C.maintLabels[state.maintenancePlan]}`;
+    const msg = encodeURIComponent(
+      `Bonjour NexusAI 👋\n\nJe souhaite démarrer un projet :\n• Type : ${C.projectLabels[state.projectType]}\n• Pages sup. : ${state.extraPages}\n• Design : ${C.designLabels[state.designLevel]}\n• Délai : ${state.urgency}\n• Options : ${optsTxt}\n• Maintenance : ${maintTxt}\n\nBudget estimé : ${fmt(total)} € (${tier})\n\nPouvez-vous m'aider à finaliser le devis ?`
+    );
+    const url = `https://wa.me/${C.whatsappNumber}?text=${msg}`;
+    ['waBtnHero','waBtnSim','waBtnFinal','waChannel','fabWa','waFooter'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.href = url;
+    });
+  }
+
+  function bindChoiceGroup(id, key) {
+    const c = document.getElementById(id);
+    c.querySelectorAll('.choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        c.querySelectorAll('.choice').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state[key] = btn.dataset.key;
+        state._sliderTouched = false;
+        if (id === 'maintMode') {
+          document.getElementById('maintPlan').style.display = btn.dataset.key === 'none' ? 'none' : 'grid';
+        }
+        render();
+      });
+    });
+  }
+  ['projectType','designLevel','urgency'].forEach(id => bindChoiceGroup(id, id));
+  bindChoiceGroup('maintMode', 'maintenanceMode');
+  bindChoiceGroup('maintPlan', 'maintenancePlan');
+
+  document.getElementById('extraPages').addEventListener('input', e => {
+    state.extraPages = Math.max(0, parseInt(e.target.value || 0, 10));
+    state._sliderTouched = false; render();
+  });
+
+  document.querySelectorAll('#options input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const k = cb.dataset.key;
+      if (cb.checked) { if (!state.selectedOptions.includes(k)) state.selectedOptions.push(k); }
+      else { state.selectedOptions = state.selectedOptions.filter(o => o !== k); }
+      state._sliderTouched = false; render();
+    });
+  });
+
+  slider.addEventListener('input', () => {
+    state._sliderTouched = true;
+    const fill = document.getElementById('sliderFill');
+    const pct = ((slider.value - C.slider.min) / (C.slider.max - C.slider.min)) * 100;
+    fill.style.width = pct + '%';
+    document.getElementById('sliderValue').textContent = fmt(slider.value) + ' €';
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    state.projectType = firstKey(C.basePrices);
+    state.extraPages = 0;
+    state.designLevel = firstKey(C.designLevels);
+    state.urgency = firstKey(C.urgency);
+    state.selectedOptions = [];
+    state.maintenanceMode = 'none';
+    state.maintenancePlan = 'essential';
+    state._sliderTouched = false;
+    ['projectType','designLevel','urgency','maintMode','maintPlan'].forEach(id => {
+      const c = document.getElementById(id);
+      c.querySelectorAll('.choice').forEach((b, i) => b.classList.toggle('active', i === 0));
+    });
+    document.getElementById('maintPlan').style.display = 'none';
+    document.getElementById('extraPages').value = 0;
+    document.querySelectorAll('#options input[type="checkbox"]').forEach(cb => cb.checked = false);
+    render();
+  });
+
+  document.getElementById('questForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const d = {
+      name: f.name.value, email: f.email.value, phone: f.phone.value, company: f.company.value,
+      project: f.project.value, pages: f.pages.value, identity: f.identity.value, ai: f.ai.value,
+      delay: f.delay.value, budget: f.budget.value, goal: f.goal.value, message: f.message.value
+    };
+    const msg = encodeURIComponent(
+      `Bonjour NexusAI 👋\n\nNouveau brief — Questionnaire de découverte\n\n• Nom : ${d.name}\n• Email : ${d.email}\n• Tel : ${d.phone}\n• Entreprise : ${d.company}\n\n• Projet : ${d.project}\n• Pages : ${d.pages}\n• Identité visuelle : ${d.identity}\n• IA : ${d.ai}\n• Délai : ${d.delay}\n• Budget : ${d.budget}\n• Objectif : ${d.goal}\n\n• Description : ${d.message}`
+    );
+    window.open(`https://wa.me/${C.whatsappNumber}?text=${msg}`, '_blank');
+  });
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  render();
+})();
+</script>
+</body>
+</html>
