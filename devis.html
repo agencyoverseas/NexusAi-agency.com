@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2818" />
+<title>NexusAI Agency — Template Devis Bizness</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --green-deep:#0d2818;
+  --green-rich:#14442b;
+  --green-mid:#1f6e4f;
+  --green-glow:#34d399;
+  --cream:#f6f1e3;
+  --cream-deep:#ece4cf;
+  --cream-light:#fbf7eb;
+  --cream-soft:#d9d2bf;
+  --cream-mute:#8e8775;
+  --gold:#c8973f;
+  --gold-bright:#e8c470;
+  --gold-deep:#8a6a36;
+  --ink-dark:#122019;
+  --ink-soft:#3a4d40;
+  --line-l:rgba(13,40,24,0.12);
+  --line-l-s:rgba(13,40,24,0.22);
+  --shadow:0 24px 60px rgba(13,40,24,0.10);
+  --shadow-soft:0 8px 24px rgba(13,40,24,0.06);
+  --radius:14px;
+  --radius-lg:22px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--cream);
+  color:var(--ink-dark);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-deep);font-weight:500}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-0.01em}
+h1{font-size:28px}
+h2{font-size:18px;text-transform:uppercase;letter-spacing:0.18em;font-weight:500;color:var(--gold-deep)}
+h3{font-size:15px;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;color:var(--ink-soft)}
+
+/* ===== TOPBAR ===== */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--green-deep);
+  color:var(--cream);
+  border-bottom:1px solid rgba(200,151,63,0.25);
+}
+.topbar-inner{
+  max-width:1320px;margin:0 auto;
+  padding:14px 26px;
+  display:flex;align-items:center;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:0.04em}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold-bright)}
+.brand small{display:block;font-family:'Inter Tight',sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--cream-mute);margin-top:2px}
+.topbar-actions{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:10px;
+  font-size:13px;font-weight:600;letter-spacing:0.02em;
+  border:1px solid transparent;cursor:pointer;
+  transition:all .2s ease;
+  text-decoration:none;
+  font-family:inherit;
+}
+.btn svg{width:15px;height:15px}
+.btn-primary{background:var(--gold);color:var(--green-deep)}
+.btn-primary:hover{background:var(--gold-bright);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:rgba(200,151,63,0.4);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(200,151,63,0.08)}
+.btn-wa{background:#25d366;color:#0a3a20}
+.btn-wa:hover{background:#2bef74}
+.btn-dark{background:var(--green-rich);color:var(--cream);border-color:rgba(200,151,63,0.3)}
+.btn-dark:hover{background:var(--green-mid)}
+.btn-danger{background:transparent;color:#a14040;border-color:rgba(161,64,64,0.3)}
+.btn-danger:hover{background:rgba(161,64,64,0.08)}
+.btn-sm{padding:6px 12px;font-size:12px;border-radius:8px}
+
+/* ===== LAYOUT ===== */
+.layout{
+  max-width:1320px;margin:0 auto;padding:30px 26px 80px;
+  display:grid;grid-template-columns:1.35fr 1fr;gap:30px;
+  align-items:start;
+}
+.col-left,.col-right{display:flex;flex-direction:column;gap:22px}
+.col-right{position:sticky;top:90px}
+
+.card{
+  background:var(--cream-light);
+  border:1px solid var(--line-l);
+  border-radius:var(--radius-lg);
+  padding:26px;
+  box-shadow:var(--shadow-soft);
+}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.card-head .num{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:14px;
+  color:var(--gold-deep);
+}
+
+/* ===== INPUTS ===== */
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+label{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-soft);font-weight:600}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],select,textarea{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid var(--line-l);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink-dark);
+  font-family:inherit;font-size:14px;
+  transition:border-color .15s,box-shadow .15s;
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(200,151,63,0.15);
+}
+textarea{resize:vertical;min-height:70px}
+select{cursor:pointer;background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%23122019" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') right 14px center no-repeat;appearance:none;padding-right:38px}
+
+/* ===== TABLE DEVIS ===== */
+.lines-wrap{margin-top:8px}
+.lines{
+  width:100%;border-collapse:separate;border-spacing:0;
+  background:#fff;border:1px solid var(--line-l);
+  border-radius:12px;overflow:hidden;
+}
+.lines th{
+  text-align:left;padding:11px 12px;
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:600;
+  background:var(--cream-deep);
+  border-bottom:1px solid var(--line-l);
+}
+.lines td{padding:6px 8px;vertical-align:middle;border-bottom:1px solid var(--line-l)}
+.lines tr:last-child td{border-bottom:none}
+.lines td input,.lines td select,.lines td textarea{
+  border:none;background:transparent;padding:8px 6px;border-radius:6px;
+}
+.lines td input:focus,.lines td select:focus,.lines td textarea:focus{background:var(--cream-light);box-shadow:none}
+.lines td.col-qty{width:70px}
+.lines td.col-price{width:110px}
+.lines td.col-total{width:110px;text-align:right;font-weight:600;color:var(--green-rich);padding-right:14px}
+.lines td.col-del{width:36px;text-align:center}
+.lines td input[type=number]{text-align:right}
+.line-del-btn{
+  width:26px;height:26px;border-radius:50%;
+  background:transparent;border:none;cursor:pointer;
+  color:#a14040;font-size:16px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.line-del-btn:hover{background:rgba(161,64,64,0.08)}
+.add-line{
+  margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;
+}
+
+/* ===== PRESETS / CATALOGUE ===== */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 12px;
+  background:#fff;border:1px solid var(--line-l);
+  border-radius:999px;cursor:pointer;
+  font-size:12px;font-weight:500;
+  color:var(--ink-dark);
+  transition:all .15s;
+}
+.chip:hover{border-color:var(--gold);transform:translateY(-1px);background:var(--cream-light)}
+.chip.active{background:var(--green-rich);color:var(--cream);border-color:var(--green-rich)}
+.chip small{color:var(--gold-deep);font-weight:600}
+.chip.active small{color:var(--gold-bright)}
+
+.catalog-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:8px;margin-top:10px;
+}
+.cat-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 12px;background:#fff;border:1px solid var(--line-l);
+  border-radius:10px;cursor:pointer;
+  font-size:13px;
+  transition:all .15s;
+}
+.cat-item:hover{border-color:var(--gold);background:var(--cream-light)}
+.cat-item .cat-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat-item .cat-price{color:var(--gold-deep);font-weight:600;font-size:12px;margin-left:8px}
+
+/* ===== RESULT ===== */
+.result-card{
+  background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-rich) 100%);
+  color:var(--cream);
+  border:1px solid rgba(200,151,63,0.3);
+  position:relative;overflow:hidden;
+}
+.result-card::before{
+  content:'';position:absolute;top:-50%;right:-30%;
+  width:80%;height:200%;
+  background:radial-gradient(ellipse,rgba(200,151,63,0.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.result-card h2{color:var(--gold-bright)}
+.result-card h3{color:var(--cream-soft)}
+.result-card label{color:var(--cream-mute)}
+.result-card input,.result-card select{background:rgba(255,255,255,0.05);color:var(--cream);border-color:rgba(200,151,63,0.25)}
+.result-card input:focus,.result-card select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,151,63,0.18)}
+
+.totals{margin-top:18px;position:relative;z-index:1}
+.totals .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(200,151,63,0.18)}
+.totals .row span:first-child{color:var(--cream-soft);font-size:13px}
+.totals .row span:last-child{font-weight:600;color:var(--cream)}
+.totals .row.major{font-size:16px;padding-top:14px;border-bottom:none}
+.totals .row.major span:first-child{color:var(--cream);font-weight:500}
+.totals .row.major span:last-child{color:var(--gold-bright);font-size:18px}
+.totals .row.grand{
+  margin-top:14px;padding:18px 0;
+  border-top:1px solid rgba(200,151,63,0.4);
+  border-bottom:1px solid rgba(200,151,63,0.4);
+}
+.totals .row.grand span:first-child{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:18px;color:var(--cream);
+}
+.totals .row.grand span:last-child{
+  font-size:34px;color:var(--gold-bright);font-weight:600;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.result-actions{display:flex;flex-direction:column;gap:10px;margin-top:22px;position:relative;z-index:1}
+.result-actions .btn{justify-content:center;padding:13px 18px;font-size:14px}
+
+.discount-row{
+  display:grid;grid-template-columns:1fr 90px 90px;gap:8px;margin-top:14px;
+  padding:14px;background:rgba(255,255,255,0.04);border-radius:10px;
+}
+.discount-row select,.discount-row input{padding:8px 10px;font-size:13px}
+
+/* ===== SECTOR / PRESETS ===== */
+.sector-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:8px;margin-top:10px;
+}
+.sector{
+  padding:14px 12px;background:#fff;border:1px solid var(--line-l);
+  border-radius:12px;cursor:pointer;text-align:center;
+  font-size:13px;font-weight:500;
+  transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.sector:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.sector.active{background:var(--green-rich);color:var(--cream);border-color:var(--gold)}
+.sector .ico{font-size:22px;line-height:1}
+.sector small{color:var(--cream-mute);font-size:10px;text-transform:uppercase;letter-spacing:0.1em}
+.sector.active small{color:var(--gold-bright)}
+
+/* ===== ADMIN MODAL ===== */
+.admin-overlay{
+  position:fixed;inset:0;background:rgba(13,40,24,0.65);
+  z-index:100;display:none;align-items:flex-start;justify-content:center;
+  padding:40px 20px;overflow-y:auto;
+  backdrop-filter:blur(6px);
+}
+.admin-overlay.open{display:flex}
+.admin-panel{
+  background:var(--cream-light);
+  max-width:980px;width:100%;
+  border-radius:var(--radius-lg);
+  border:1px solid rgba(200,151,63,0.4);
+  box-shadow:0 40px 100px rgba(0,0,0,0.4);
+  overflow:hidden;
+}
+.admin-head{
+  padding:22px 26px;
+  background:var(--green-deep);color:var(--cream);
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid rgba(200,151,63,0.3);
+}
+.admin-head h2{color:var(--gold-bright);margin:0}
+.admin-body{padding:24px 26px;max-height:75vh;overflow-y:auto}
+.admin-section{margin-bottom:28px}
+.admin-section > h3{margin-bottom:12px}
+.admin-row{
+  display:grid;grid-template-columns:1.4fr 90px 1fr 36px;
+  gap:8px;align-items:center;margin-bottom:6px;
+}
+.admin-row input{padding:8px 10px;font-size:13px}
+.admin-row .col-cat{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.1em}
+.admin-actions{display:flex;gap:10px;padding:18px 26px;border-top:1px solid var(--line-l);background:var(--cream-deep)}
+
+/* ===== STATUS BADGE ===== */
+.status-bar{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;
+  background:var(--cream-deep);border-radius:10px;
+  font-size:12px;color:var(--ink-soft);margin-bottom:14px;
+}
+.status-bar .dot{width:8px;height:8px;border-radius:50%;background:var(--green-glow);box-shadow:0 0 8px var(--green-glow)}
+
+/* ===== TOAST ===== */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--green-deep);color:var(--cream);
+  padding:14px 22px;border-radius:12px;
+  font-size:14px;font-weight:500;
+  box-shadow:0 16px 40px rgba(0,0,0,0.3);
+  border:1px solid rgba(200,151,63,0.4);
+  opacity:0;pointer-events:none;
+  transition:all .3s;z-index:200;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .col-right{position:static}
+}
+@media (max-width:640px){
+  .topbar-inner{padding:12px 16px;gap:12px}
+  .brand{font-size:18px}
+  .layout{padding:18px 14px 60px;gap:18px}
+  .card{padding:18px}
+  .field-row,.field-row-3{grid-template-columns:1fr}
+  .lines td.col-qty{width:60px}
+  .lines td.col-price,.lines td.col-total{width:90px}
+  h1{font-size:22px}
+}
+
+/* ===== PRINT ===== */
+@media print{
+  .topbar,.col-right .card:not(.print-keep),
+  .add-line,.line-del-btn,.btn,.chips,.catalog-grid,
+  .sector-grid,.discount-row,.admin-overlay,.toast,
+  .field-row .field:has(textarea):empty,.no-print{display:none !important}
+  body{background:#fff;color:#000}
+  .layout{display:block;padding:0;max-width:none}
+  .card{box-shadow:none;border:1px solid #ddd;break-inside:avoid;page-break-inside:avoid;margin-bottom:14px;background:#fff}
+  .col-right{display:block}
+  .result-card{background:#fff !important;color:#000 !important;border:2px solid var(--green-deep)}
+  .result-card *{color:#000 !important}
+  .result-card .row.grand span:last-child{color:var(--green-deep) !important}
+  .lines th{background:#f4f0e2}
+  .print-header{display:block !important}
+}
+.print-header{display:none;padding:18px 0;border-bottom:2px solid var(--green-deep);margin-bottom:18px}
+.print-header .ph-brand{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--green-deep)}
+.print-header .ph-meta{font-size:12px;color:#555;margin-top:6px}
+</style>
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<header class="topbar no-print">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        NexusAI Agency
+        <small>Template Devis · Bizness</small>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost" id="btnNewQuote">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Nouveau
+      </button>
+      <button class="btn btn-ghost" id="btnSave">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        Sauvegarder
+      </button>
+      <button class="btn btn-ghost" id="btnLoad">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        Charger
+      </button>
+      <button class="btn btn-dark" id="btnAdmin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Tarifs (admin)
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PRINT HEADER (visible uniquement à l'impression) ===== -->
+<div class="print-header">
+  <div class="ph-brand">NexusAI Agency</div>
+  <div class="ph-meta">Devis confidentiel — préparé pour votre projet digital. <span id="phDate"></span></div>
+</div>
+
+<main class="layout">
+  <!-- ===================================================== -->
+  <!-- ===================== COLONNE GAUCHE ================ -->
+  <!-- ===================================================== -->
+  <div class="col-left">
+
+    <!-- ===== CLIENT ===== -->
+    <section class="card">
+      <div class="card-head">
+        <h2>01 · Informations client</h2>
+        <span class="num">Identité du projet</span>
+      </div>
+      <div class="status-bar no-print">
+        <span class="dot"></span>
+        <span>Devis n° <strong id="quoteNumber">—</strong> · créé le <span id="quoteDate">—</span> · valable <span id="quoteValid">30</span> jours</span>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Nom du client</label><input type="text" id="cliName" placeholder="Jean Dupont" /></div>
+        <div class="field"><label>Entreprise / Marque</label><input type="text" id="cliCompany" placeholder="Nom commercial" /></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Email</label><input type="email" id="cliEmail" placeholder="client@email.com" /></div>
+        <div class="field"><label>Téléphone / WhatsApp</label><input type="tel" id="cliPhone" placeholder="+33 6 ..." /></div>
+      </div>
+      <div class="field-row-3">
+        <div class="field"><label>Ville / Pays</label><input type="text" id="cliCity" placeholder="Paris, France" /></div>
+        <div class="field"><label>Date du devis</label><input type="date" id="cliDate" /></div>
+        <div class="field"><label>Validité (jours)</label><input type="number" id="cliValidity" min="7" max="180" value="30" /></div>
+      </div>
+      <div class="field">
+        <label>Contexte / Brief client</label>
+        <textarea id="cliBrief" rows="3" placeholder="Quelques mots sur le projet, les besoins, les objectifs..."></textarea>
+      </div>
+    </section>
+
+    <!-- ===== SECTEUR ===== -->
+    <section class="card">
+      <div class="card-head">
+        <h2>02 · Secteur d'activité</h2>
+        <span class="num">Universel — tout type d'entreprise</span>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0 0 4px">Sélectionnez un secteur pour charger un préréglage de devis adapté (modifiable ensuite). Ou commencez vierge.</p>
+      <div class="sector-grid" id="sectorGrid"></div>
+    </section>
+
+    <!-- ===== CATALOGUE DE PRESTATIONS ===== -->
+    <section class="card">
+      <div class="card-head">
+        <h2>03 · Catalogue prestations</h2>
+        <span class="num">Cliquez pour ajouter au devis</span>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin:0 0 10px">Cliquez sur une prestation pour l'ajouter à la ligne du devis. Vous pouvez ensuite ajuster libellé, quantité et prix.</p>
+
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">Sites & Pages</h3>
+        <div class="catalog-grid" data-cat-group="site"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">E-commerce</h3>
+        <div class="catalog-grid" data-cat-group="ecommerce"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">Applications</h3>
+        <div class="catalog-grid" data-cat-group="app"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">IA & Automatisation</h3>
+        <div class="catalog-grid" data-cat-group="ai"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">Design & Branding</h3>
+        <div class="catalog-grid" data-cat-group="design"></div>
+      </div>
+      <div style="margin-bottom:14px">
+        <h3 style="margin-bottom:6px">Marketing & SEO</h3>
+        <div class="catalog-grid" data-cat-group="marketing"></div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px">Maintenance & Support</h3>
+        <div class="catalog-grid" data-cat-group="maintenance"></div>
+      </div>
+    </section>
+
+    <!-- ===== LIGNES DU DEVIS ===== -->
+    <section class="card">
+      <div class="card-head">
+        <h2>04 · Lignes du devis</h2>
+        <span class="num">Modulable ligne par ligne</span>
+      </div>
+      <div class="lines-wrap">
+        <table class="lines">
+          <thead>
+            <tr>
+              <th style="width:40%">Désignation</th>
+              <th>Détail / Note</th>
+              <th class="col-qty">Qté</th>
+              <th class="col-price">Prix u. €</th>
+              <th class="col-total">Total €</th>
+              <th class="col-del no-print"></th>
+            </tr>
+          </thead>
+          <tbody id="linesBody"></tbody>
+        </table>
+        <div class="add-line no-print">
+          <button class="btn btn-dark btn-sm" id="addLineBtn">+ Ajouter une ligne libre</button>
+          <button class="btn btn-ghost btn-sm" id="clearLinesBtn" style="color:var(--ink-soft);border-color:var(--line-l-s)">Tout vider</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONDITIONS / NOTES ===== -->
+    <section class="card">
+      <div class="card-head">
+        <h2>05 · Conditions & notes</h2>
+      </div>
+      <div class="field">
+        <label>Conditions de paiement</label>
+        <input type="text" id="payTerms" value="30% à la signature · 40% à mi-parcours · 30% à la livraison" />
+      </div>
+      <div class="field">
+        <label>Délai de livraison estimé</label>
+        <input type="text" id="delay" placeholder="ex : 3 à 5 semaines après signature" />
+      </div>
+      <div class="field">
+        <label>Notes additionnelles (visibles sur le devis)</label>
+        <textarea id="notes" rows="3" placeholder="Précisions sur le périmètre, hypothèses, exclusions..."></textarea>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- ===================== COLONNE DROITE ================ -->
+  <!-- ===================================================== -->
+  <div class="col-right">
+
+    <!-- ===== TOTAUX & ACTIONS ===== -->
+    <section class="card result-card print-keep">
+      <div class="card-head" style="border-bottom:1px solid rgba(200,151,63,0.25);padding-bottom:12px;margin-bottom:18px">
+        <h2>06 · Récapitulatif</h2>
+      </div>
+
+      <div class="discount-row no-print">
+        <select id="discountType">
+          <option value="none">Aucune remise</option>
+          <option value="percent">Remise %</option>
+          <option value="fixed">Remise € fixe</option>
+          <option value="launch">Offre lancement -50%</option>
+        </select>
+        <input type="number" id="discountValue" min="0" step="1" value="0" />
+        <select id="taxMode">
+          <option value="none">HT</option>
+          <option value="tva20">TVA 20%</option>
+          <option value="tva10">TVA 10%</option>
+          <option value="tva55">TVA 5.5%</option>
+        </select>
+      </div>
+
+      <div class="totals">
+        <div class="row"><span>Sous-total prestations</span><span id="totSubtotal">0 €</span></div>
+        <div class="row" id="rowDiscount" style="display:none"><span>Remise <em id="discLabel"></em></span><span id="totDiscount">−0 €</span></div>
+        <div class="row major"><span>Total HT</span><span id="totHT">0 €</span></div>
+        <div class="row" id="rowTax" style="display:none"><span>TVA <em id="taxLabel"></em></span><span id="totTax">0 €</span></div>
+        <div class="row grand"><span>Total à régler</span><span id="totGrand">0 €</span></div>
+        <div class="row" id="rowMonthly" style="display:none;margin-top:8px"><span>+ Maintenance mensuelle</span><span id="totMonthly">0 €/mois</span></div>
+      </div>
+
+      <div class="result-actions no-print">
+        <button class="btn btn-primary" id="btnPrint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Imprimer / Exporter PDF
+        </button>
+        <button class="btn btn-wa" id="btnWa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          Envoyer sur WhatsApp
+        </button>
+        <button class="btn btn-dark" id="btnEmail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          Envoyer par email
+        </button>
+        <button class="btn btn-ghost" id="btnCopy" style="color:var(--cream);border-color:rgba(200,151,63,0.3)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copier le récap texte
+        </button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ===== ADMIN MODAL (modifier les tarifs en arrière-plan) ===== -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <h2>⚙️ Configuration des tarifs (admin)</h2>
+      <button class="btn btn-ghost btn-sm" id="closeAdmin" style="color:var(--cream);border-color:rgba(200,151,63,0.3)">Fermer</button>
+    </div>
+    <div class="admin-body">
+      <p style="margin-top:0;font-size:13px;color:var(--ink-soft)">Modifiez le libellé, le prix et la description de chaque prestation. Les changements sont sauvegardés automatiquement dans votre navigateur (localStorage) et appliqués partout dans l'outil.</p>
+
+      <div id="adminGroups"></div>
+
+      <div class="admin-section">
+        <h3>Paramètres globaux</h3>
+        <div class="field-row-3">
+          <div class="field"><label>Devise (symbole)</label><input type="text" id="cfgCurrency" value="€" /></div>
+          <div class="field"><label>Préfixe N° devis</label><input type="text" id="cfgQuotePrefix" value="DEV" /></div>
+          <div class="field"><label>WhatsApp agence</label><input type="text" id="cfgWa" value="33600000000" /></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Email agence</label><input type="email" id="cfgEmail" value="contact@nexusai-agency.com" /></div>
+          <div class="field"><label>Validité par défaut (jours)</label><input type="number" id="cfgValidity" value="30" /></div>
+        </div>
+      </div>
+    </div>
+    <div class="admin-actions">
+      <button class="btn btn-primary" id="adminSave">Sauvegarder les modifications</button>
+      <button class="btn btn-danger" id="adminReset">Réinitialiser aux valeurs par défaut</button>
+      <button class="btn btn-ghost" id="adminExport" style="color:var(--ink-soft);border-color:var(--line-l-s)">Exporter config (JSON)</button>
+      <label class="btn btn-ghost" style="color:var(--ink-soft);border-color:var(--line-l-s);cursor:pointer">
+        Importer config
+        <input type="file" id="adminImport" accept="application/json" style="display:none" />
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   ✦ CONFIGURATION PAR DÉFAUT — MODIFIABLE EN ADMIN (UI)
+   Tout est aussi modifiable manuellement ci-dessous, mais
+   le panneau Admin (⚙️) permet de tout changer sans toucher
+   au code.
+   ════════════════════════════════════════════════════════════ */
+const DEFAULT_CONFIG = {
+  currency: '€',
+  quotePrefix: 'DEV',
+  whatsapp: '33600000000',
+  email: 'contact@nexusai-agency.com',
+  validity: 30,
+
+  catalog: {
+    site: [
+      { id:'landing',    label:'Landing page premium',          price:1500, note:'1 page haute conversion · responsive · animations' },
+      { id:'site3',      label:'Site vitrine — 3 pages',        price:1900, note:'Accueil · Services · Contact' },
+      { id:'site5',      label:'Site vitrine — 5 pages',        price:2500, note:'+ À propos · Réalisations' },
+      { id:'site10',     label:'Site vitrine — 8 à 10 pages',   price:3000, note:'Pour structures établies' },
+      { id:'sitePrem',   label:'Site Business Premium',         price:5200, note:'Sur-mesure haut de gamme' },
+      { id:'extraPage',  label:'Page supplémentaire',           price:200,  note:'Par page additionnelle' },
+      { id:'multilang',  label:'Site multilingue (par langue)', price:600,  note:'Traduction et adaptation' },
+      { id:'blog',       label:'Module blog / actualités',      price:450,  note:'CMS éditable client' },
+    ],
+    ecommerce: [
+      { id:'shopify',    label:'Shopify clé en main',           price:2900, note:'Thème premium · jusqu\'à 20 produits' },
+      { id:'shopifyPro', label:'Shopify Pro (>50 produits)',    price:4500, note:'Catalogue large · automatisations' },
+      { id:'woocommerce',label:'WooCommerce sur mesure',        price:3400, note:'WordPress · paiement Stripe/PayPal' },
+      { id:'productImport',label:'Import catalogue produits',   price:350,  note:'Par lot de 50 produits' },
+      { id:'paymentSetup',label:'Configuration paiement',        price:300,  note:'Stripe / PayPal / autres' },
+      { id:'shippingSetup',label:'Configuration livraison',     price:250,  note:'Transporteurs · zones · tarifs' },
+    ],
+    app: [
+      { id:'webapp',     label:'Application web sur mesure',    price:4000, note:'Dashboard · espace utilisateur' },
+      { id:'mobile',     label:'Application mobile (iOS+Android)',price:6000,note:'React Native · stores' },
+      { id:'mobileweb',  label:'Mobile + Web (full stack)',     price:10000,note:'Application complète multi-plateforme' },
+      { id:'extraScreen',label:'Écran / fonctionnalité sup.',   price:500,  note:'Par écran additionnel' },
+      { id:'auth',       label:'Authentification utilisateurs', price:600,  note:'Login · inscription · mot de passe' },
+      { id:'dashboard',  label:'Dashboard / espace membre',     price:2000, note:'Tableau de bord client' },
+    ],
+    ai: [
+      { id:'chatbot',    label:'Chatbot IA basique',            price:2600, note:'Assistant FAQ · site web' },
+      { id:'aiAgent',    label:'Agent IA métier avancé',        price:3600, note:'CRM · automatisations métier' },
+      { id:'waAuto',     label:'Automatisation WhatsApp',       price:1000, note:'Réponses auto · scénarios' },
+      { id:'autoFlow',   label:'Workflow automatisé (Make/n8n)',price:800,  note:'Par workflow' },
+      { id:'aiContent',  label:'Génération contenu IA',         price:600,  note:'Articles · descriptions · emails' },
+      { id:'voiceBot',   label:'Assistant vocal / téléphonique',price:3200, note:'Standard IA · prise de RDV' },
+    ],
+    design: [
+      { id:'designStd',  label:'Design standard inclus',        price:0,    note:'Maquette propre · livré' },
+      { id:'designPrem', label:'Design premium (supplément)',   price:800,  note:'Direction artistique poussée' },
+      { id:'designLux',  label:'Design luxury (supplément)',    price:1800, note:'Sur-mesure · animations · 3D' },
+      { id:'logo',       label:'Création logo',                 price:450,  note:'3 propositions · 2 retouches' },
+      { id:'identity',   label:'Identité visuelle complète',    price:1200, note:'Logo · charte · papeterie' },
+      { id:'photoshoot', label:'Shooting photo / vidéo',        price:900,  note:'Demi-journée · 20 visuels' },
+    ],
+    marketing: [
+      { id:'seoBase',    label:'SEO de base',                   price:250,  note:'Optimisations techniques' },
+      { id:'seoAdv',     label:'SEO avancé (audit + actions)',  price:1200, note:'Audit · stratégie · 3 mois' },
+      { id:'copy',       label:'Copywriting (par page)',        price:150,  note:'Rédaction orientée conversion' },
+      { id:'gAds',       label:'Configuration Google Ads',      price:400,  note:'Comptes · campagnes · tracking' },
+      { id:'metaAds',    label:'Configuration Meta Ads',        price:400,  note:'Facebook · Instagram · pixel' },
+      { id:'analytics',  label:'Tracking Analytics + GTM',      price:300,  note:'Mesure complète des conversions' },
+      { id:'booking',    label:'Module prise de RDV',           price:500,  note:'Calendly / Cal.com intégré' },
+    ],
+    maintenance: [
+      { id:'maintEss',   label:'Maintenance Essentielle (mois)',price:59,   note:'Sauvegardes · MAJ sécurité', recurring:'monthly' },
+      { id:'maintStd',   label:'Maintenance Standard (mois)',   price:150,  note:'+ corrections · 2h/mois', recurring:'monthly' },
+      { id:'maintPrem',  label:'Maintenance Premium (mois)',    price:200,  note:'+ évolutions · 4h/mois', recurring:'monthly' },
+      { id:'hosting',    label:'Hébergement annuel',            price:180,  note:'Domaine · SSL · perf', recurring:'yearly' },
+      { id:'training',   label:'Formation client (2h)',         price:200,  note:'Prise en main outils' },
+      { id:'support',    label:'Support prioritaire (mois)',    price:120,  note:'Réponse < 4h ouvrées', recurring:'monthly' },
+    ],
+  },
+
+  sectors: [
+    { id:'restaurant', label:'Restaurant',   ico:'🍽️',  preset:['landing','booking','seoBase','designPrem','maintEss'] },
+    { id:'beaute',     label:'Beauté · Salon',ico:'💄',  preset:['site3','booking','copy','designPrem','maintEss'] },
+    { id:'immo',       label:'Immobilier',   ico:'🏠',  preset:['site5','seoBase','copy','designPrem','dashboard','maintStd'] },
+    { id:'sante',      label:'Santé · Médical',ico:'⚕️',preset:['site5','booking','seoBase','maintStd'] },
+    { id:'fitness',    label:'Fitness · Sport',ico:'💪',preset:['site5','booking','waAuto','designPrem','maintEss'] },
+    { id:'btp',        label:'BTP · Artisan',ico:'🔨',  preset:['site3','copy','seoBase','maintEss'] },
+    { id:'avocat',     label:'Avocat · Conseil',ico:'⚖️',preset:['sitePrem','copy','seoBase','maintStd'] },
+    { id:'ecommerce',  label:'E-commerce',   ico:'🛍️', preset:['shopify','productImport','paymentSetup','seoAdv','maintStd'] },
+    { id:'multi',      label:'Multiservices',ico:'🛠️', preset:['site5','booking','waAuto','seoBase','maintEss'] },
+    { id:'event',      label:'Événementiel', ico:'🎉',  preset:['landing','booking','designPrem','copy'] },
+    { id:'edu',        label:'Formation · Coach',ico:'🎓',preset:['site5','booking','copy','dashboard','maintEss'] },
+    { id:'startup',    label:'Startup · SaaS',ico:'🚀', preset:['webapp','landing','auth','dashboard','designPrem'] },
+    { id:'tech',       label:'Tech · IA',    ico:'🤖',  preset:['webapp','chatbot','aiAgent','autoFlow','designPrem','maintStd'] },
+    { id:'asso',       label:'Association · ONG',ico:'🤝',preset:['site5','copy','blog','maintEss'] },
+    { id:'agri',       label:'Agriculture · Local',ico:'🌾',preset:['site3','copy','seoBase','maintEss'] },
+    { id:'transport',  label:'Transport · VTC',ico:'🚗',preset:['landing','booking','waAuto','maintEss'] },
+    { id:'auto',       label:'Auto · Concession',ico:'🚙',preset:['site5','copy','seoBase','maintStd'] },
+    { id:'hotel',      label:'Hôtel · Hébergement',ico:'🏨',preset:['site5','booking','designPrem','seoAdv','multilang','maintStd'] },
+    { id:'custom',     label:'Sur mesure',   ico:'✨',  preset:[] },
+  ],
+};
+
+const CFG_KEY = 'nexusai_devis_config_v1';
+const QUOTE_KEY = 'nexusai_devis_state_v1';
+const SAVES_KEY = 'nexusai_devis_saves_v1';
+
+// ====== STATE ======
+let CONFIG = loadConfig();
+let state = {
+  client: { name:'', company:'', email:'', phone:'', city:'', date: todayISO(), validity: CONFIG.validity, brief:'' },
+  sector: null,
+  lines: [],
+  discount: { type:'none', value:0 },
+  tax: 'none',
+  payTerms: '30% à la signature · 40% à mi-parcours · 30% à la livraison',
+  delay: '',
+  notes: '',
+  quoteNumber: genQuoteNumber(),
+};
+
+// ====== UTILS ======
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+function genQuoteNumber(){
+  const d = new Date();
+  const yy = String(d.getFullYear()).slice(-2);
+  const mm = String(d.getMonth()+1).padStart(2,'0');
+  const rand = Math.floor(Math.random()*900+100);
+  return `${CONFIG.quotePrefix}-${yy}${mm}-${rand}`;
+}
+function fmt(n){ return new Intl.NumberFormat('fr-FR').format(Math.round(n)) + ' ' + CONFIG.currency; }
+function uid(){ return 'l'+Math.random().toString(36).slice(2,9); }
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove('show'), 2400);
+}
+
+// ====== CONFIG PERSISTENCE ======
+function loadConfig(){
+  try{
+    const raw = localStorage.getItem(CFG_KEY);
+    if (!raw) return JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+    const stored = JSON.parse(raw);
+    return { ...JSON.parse(JSON.stringify(DEFAULT_CONFIG)), ...stored };
+  }catch(e){ return JSON.parse(JSON.stringify(DEFAULT_CONFIG)); }
+}
+function saveConfig(){ localStorage.setItem(CFG_KEY, JSON.stringify(CONFIG)); }
+
+// ====== STATE PERSISTENCE (auto-save current quote) ======
+function autosave(){ localStorage.setItem(QUOTE_KEY, JSON.stringify(state)); }
+function autoload(){
+  try{
+    const raw = localStorage.getItem(QUOTE_KEY);
+    if (raw){ state = { ...state, ...JSON.parse(raw) }; }
+  }catch(e){}
+}
+
+// ====== CATALOG LOOKUP ======
+function findCatalogItem(id){
+  for (const group of Object.keys(CONFIG.catalog)){
+    const found = CONFIG.catalog[group].find(it => it.id === id);
+    if (found) return { ...found, _group: group };
+  }
+  return null;
+}
+
+// ====== RENDER SECTORS ======
+function renderSectors(){
+  const g = document.getElementById('sectorGrid');
+  g.innerHTML = '';
+  CONFIG.sectors.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'sector' + (state.sector === s.id ? ' active' : '');
+    el.innerHTML = `<span class="ico">${s.ico}</span><span>${s.label}</span>${s.preset.length ? `<small>${s.preset.length} préréglés</small>` : ''}`;
+    el.addEventListener('click', () => applySector(s.id));
+    g.appendChild(el);
+  });
+}
+function applySector(id){
+  const s = CONFIG.sectors.find(x => x.id === id);
+  if (!s) return;
+  state.sector = id;
+  if (s.preset.length){
+    if (state.lines.length && !confirm(`Charger le préréglage "${s.label}" ? Cela remplacera les lignes actuelles.`)) {
+      renderSectors(); return;
+    }
+    state.lines = s.preset.map(catId => {
+      const item = findCatalogItem(catId);
+      if (!item) return null;
+      return { uid:uid(), label:item.label, note:item.note||'', qty:1, price:item.price, recurring:item.recurring||null };
+    }).filter(Boolean);
+    toast(`Préréglage "${s.label}" chargé`);
+  }
+  renderSectors(); renderLines(); recalc(); autosave();
+}
+
+// ====== RENDER CATALOG ======
+function renderCatalog(){
+  document.querySelectorAll('[data-cat-group]').forEach(grid => {
+    const group = grid.getAttribute('data-cat-group');
+    grid.innerHTML = '';
+    (CONFIG.catalog[group] || []).forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'cat-item';
+      el.innerHTML = `<span class="cat-label" title="${item.note||''}">${item.label}</span><span class="cat-price">+${fmt(item.price)}</span>`;
+      el.addEventListener('click', () => addLineFromCatalog(item));
+      grid.appendChild(el);
+    });
+  });
+}
+function addLineFromCatalog(item){
+  state.lines.push({ uid:uid(), label:item.label, note:item.note||'', qty:1, price:item.price, recurring:item.recurring||null });
+  renderLines(); recalc(); autosave();
+}
+
+// ====== RENDER LINES ======
+function renderLines(){
+  const tb = document.getElementById('linesBody');
+  tb.innerHTML = '';
+  if (!state.lines.length){
+    tb.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--cream-mute);font-style:italic">Aucune ligne. Cliquez sur une prestation du catalogue ou sur "+ Ajouter une ligne libre".</td></tr>`;
+    return;
+  }
+  state.lines.forEach(line => {
+    const tr = document.createElement('tr');
+    tr.dataset.uid = line.uid;
+    const total = (line.qty||0) * (line.price||0);
+    tr.innerHTML = `
+      <td><input type="text" data-f="label" value="${escapeHtml(line.label)}" placeholder="Désignation" /></td>
+      <td><input type="text" data-f="note" value="${escapeHtml(line.note||'')}" placeholder="Détail / note" /></td>
+      <td class="col-qty"><input type="number" data-f="qty" value="${line.qty}" min="0" step="1" /></td>
+      <td class="col-price"><input type="number" data-f="price" value="${line.price}" min="0" step="10" /></td>
+      <td class="col-total">${fmt(total)}${line.recurring==='monthly'?'/mois':line.recurring==='yearly'?'/an':''}</td>
+      <td class="col-del no-print"><button class="line-del-btn" title="Supprimer">×</button></td>
+    `;
+    tb.appendChild(tr);
+  });
+}
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+document.getElementById('linesBody').addEventListener('input', e => {
+  const tr = e.target.closest('tr'); if (!tr) return;
+  const line = state.lines.find(l => l.uid === tr.dataset.uid); if (!line) return;
+  const f = e.target.dataset.f;
+  if (f === 'qty' || f === 'price') line[f] = Number(e.target.value) || 0;
+  else line[f] = e.target.value;
+  if (f === 'qty' || f === 'price'){
+    tr.querySelector('.col-total').firstChild && (tr.querySelector('.col-total').textContent =
+      fmt((line.qty||0)*(line.price||0)) + (line.recurring==='monthly'?'/mois':line.recurring==='yearly'?'/an':''));
+    recalc();
+  }
+  autosave();
+});
+document.getElementById('linesBody').addEventListener('click', e => {
+  if (!e.target.classList.contains('line-del-btn')) return;
+  const tr = e.target.closest('tr');
+  state.lines = state.lines.filter(l => l.uid !== tr.dataset.uid);
+  renderLines(); recalc(); autosave();
+});
+
+document.getElementById('addLineBtn').addEventListener('click', () => {
+  state.lines.push({ uid:uid(), label:'', note:'', qty:1, price:0, recurring:null });
+  renderLines(); recalc(); autosave();
+});
+document.getElementById('clearLinesBtn').addEventListener('click', () => {
+  if (!state.lines.length) return;
+  if (confirm('Vider toutes les lignes du devis ?')){
+    state.lines = []; renderLines(); recalc(); autosave();
+  }
+});
+
+// ====== TOTALS ======
+function recalc(){
+  const oneShot = state.lines.filter(l => !l.recurring);
+  const monthly = state.lines.filter(l => l.recurring === 'monthly');
+  const yearly  = state.lines.filter(l => l.recurring === 'yearly');
+
+  const sub = oneShot.reduce((s,l)=>s+(l.qty||0)*(l.price||0),0);
+  const monthlyTot = monthly.reduce((s,l)=>s+(l.qty||0)*(l.price||0),0);
+  const yearlyTot  = yearly.reduce((s,l)=>s+(l.qty||0)*(l.price||0),0);
+
+  let discount = 0, discLabel = '';
+  if (state.discount.type === 'percent'){ discount = sub * (state.discount.value/100); discLabel = `${state.discount.value}%`; }
+  else if (state.discount.type === 'fixed'){ discount = Number(state.discount.value)||0; discLabel = 'fixe'; }
+  else if (state.discount.type === 'launch'){ discount = sub * 0.5; discLabel = 'Offre lancement -50%'; }
+
+  const ht = Math.max(0, sub - discount);
+
+  let taxRate = 0, taxLabel = '';
+  if (state.tax === 'tva20'){ taxRate = 0.20; taxLabel = '20%'; }
+  else if (state.tax === 'tva10'){ taxRate = 0.10; taxLabel = '10%'; }
+  else if (state.tax === 'tva55'){ taxRate = 0.055; taxLabel = '5.5%'; }
+  const tax = ht * taxRate;
+  const grand = ht + tax + yearlyTot;
+
+  document.getElementById('totSubtotal').textContent = fmt(sub);
+  document.getElementById('rowDiscount').style.display = discount > 0 ? 'flex' : 'none';
+  document.getElementById('discLabel').textContent = discLabel;
+  document.getElementById('totDiscount').textContent = '−' + fmt(discount);
+  document.getElementById('totHT').textContent = fmt(ht);
+  document.getElementById('rowTax').style.display = tax > 0 ? 'flex' : 'none';
+  document.getElementById('taxLabel').textContent = taxLabel;
+  document.getElementById('totTax').textContent = fmt(tax);
+  document.getElementById('totGrand').textContent = fmt(grand);
+  document.getElementById('rowMonthly').style.display = monthlyTot > 0 ? 'flex' : 'none';
+  document.getElementById('totMonthly').textContent = fmt(monthlyTot) + '/mois';
+
+  state._totals = { sub, discount, ht, tax, monthlyTot, yearlyTot, grand };
+}
+
+// ====== DISCOUNT / TAX ======
+document.getElementById('discountType').addEventListener('change', e => { state.discount.type = e.target.value; recalc(); autosave(); });
+document.getElementById('discountValue').addEventListener('input', e => { state.discount.value = Number(e.target.value)||0; recalc(); autosave(); });
+document.getElementById('taxMode').addEventListener('change', e => { state.tax = e.target.value; recalc(); autosave(); });
+
+// ====== CLIENT FIELDS ======
+const cf = {
+  cliName:'name', cliCompany:'company', cliEmail:'email', cliPhone:'phone',
+  cliCity:'city', cliDate:'date', cliValidity:'validity', cliBrief:'brief'
+};
+Object.keys(cf).forEach(id => {
+  document.getElementById(id).addEventListener('input', e => {
+    state.client[cf[id]] = id==='cliValidity' ? Number(e.target.value)||30 : e.target.value;
+    if (id === 'cliValidity') document.getElementById('quoteValid').textContent = state.client.validity;
+    autosave();
+  });
+});
+document.getElementById('payTerms').addEventListener('input', e => { state.payTerms = e.target.value; autosave(); });
+document.getElementById('delay').addEventListener('input', e => { state.delay = e.target.value; autosave(); });
+document.getElementById('notes').addEventListener('input', e => { state.notes = e.target.value; autosave(); });
+
+function fillForm(){
+  Object.keys(cf).forEach(id => { document.getElementById(id).value = state.client[cf[id]] ?? ''; });
+  document.getElementById('payTerms').value = state.payTerms || '';
+  document.getElementById('delay').value = state.delay || '';
+  document.getElementById('notes').value = state.notes || '';
+  document.getElementById('discountType').value = state.discount.type;
+  document.getElementById('discountValue').value = state.discount.value;
+  document.getElementById('taxMode').value = state.tax;
+  document.getElementById('quoteNumber').textContent = state.quoteNumber;
+  document.getElementById('quoteDate').textContent = (state.client.date||todayISO()).split('-').reverse().join('/');
+  document.getElementById('quoteValid').textContent = state.client.validity;
+}
+
+// ====== ACTIONS ======
+document.getElementById('btnNewQuote').addEventListener('click', () => {
+  if (!confirm('Créer un nouveau devis vierge ? Les modifications non sauvegardées seront perdues.')) return;
+  state = {
+    client: { name:'', company:'', email:'', phone:'', city:'', date: todayISO(), validity: CONFIG.validity, brief:'' },
+    sector: null, lines: [],
+    discount: { type:'none', value:0 }, tax:'none',
+    payTerms: '30% à la signature · 40% à mi-parcours · 30% à la livraison',
+    delay: '', notes: '',
+    quoteNumber: genQuoteNumber(),
+  };
+  fillForm(); renderSectors(); renderLines(); recalc(); autosave();
+  toast('Nouveau devis créé');
+});
+
+document.getElementById('btnSave').addEventListener('click', () => {
+  const name = prompt('Nom de sauvegarde (ex : "Dupont — Restaurant") :', state.client.company || state.client.name || state.quoteNumber);
+  if (!name) return;
+  const saves = JSON.parse(localStorage.getItem(SAVES_KEY) || '{}');
+  saves[name] = { ...state, _savedAt: new Date().toISOString() };
+  localStorage.setItem(SAVES_KEY, JSON.stringify(saves));
+  toast(`Devis "${name}" sauvegardé`);
+});
+document.getElementById('btnLoad').addEventListener('click', () => {
+  const saves = JSON.parse(localStorage.getItem(SAVES_KEY) || '{}');
+  const names = Object.keys(saves);
+  if (!names.length) return toast('Aucun devis sauvegardé');
+  const choice = prompt('Devis disponibles :\n\n' + names.map((n,i)=>`${i+1}. ${n}`).join('\n') + '\n\nTapez le numéro ou le nom :');
+  if (!choice) return;
+  let key = saves[choice] ? choice : names[Number(choice)-1];
+  if (!key || !saves[key]) return toast('Devis introuvable');
+  state = { ...state, ...saves[key] };
+  fillForm(); renderSectors(); renderLines(); recalc(); autosave();
+  toast(`Devis "${key}" chargé`);
+});
+
+document.getElementById('btnPrint').addEventListener('click', () => {
+  document.getElementById('phDate').textContent = 'Édité le ' + new Date().toLocaleDateString('fr-FR');
+  window.print();
+});
+
+function buildSummaryText(){
+  const t = state._totals || {};
+  let txt = `Bonjour ${state.client.name || ''} 👋\n\n`;
+  txt += `Voici le récapitulatif de votre devis NexusAI Agency :\n\n`;
+  txt += `📋 Devis n° ${state.quoteNumber}\n`;
+  if (state.client.company) txt += `🏢 Entreprise : ${state.client.company}\n`;
+  txt += `📅 Date : ${(state.client.date||todayISO()).split('-').reverse().join('/')} (valable ${state.client.validity}j)\n\n`;
+  txt += `── PRESTATIONS ──\n`;
+  state.lines.forEach(l => {
+    const tot = (l.qty||0)*(l.price||0);
+    txt += `• ${l.label}${l.qty>1?` ×${l.qty}`:''} — ${fmt(tot)}${l.recurring==='monthly'?'/mois':l.recurring==='yearly'?'/an':''}\n`;
+  });
+  txt += `\n── TOTAUX ──\n`;
+  txt += `Sous-total : ${fmt(t.sub||0)}\n`;
+  if ((t.discount||0)>0) txt += `Remise : −${fmt(t.discount)}\n`;
+  txt += `Total HT : ${fmt(t.ht||0)}\n`;
+  if ((t.tax||0)>0) txt += `TVA : ${fmt(t.tax)}\n`;
+  txt += `\n💎 TOTAL : ${fmt(t.grand||0)}\n`;
+  if ((t.monthlyTot||0)>0) txt += `+ Maintenance : ${fmt(t.monthlyTot)}/mois\n`;
+  if (state.payTerms) txt += `\n💳 Paiement : ${state.payTerms}\n`;
+  if (state.delay) txt += `⏱️ Délai : ${state.delay}\n`;
+  if (state.notes) txt += `\n📝 ${state.notes}\n`;
+  txt += `\nÀ très vite,\nNexusAI Agency`;
+  return txt;
+}
+
+document.getElementById('btnWa').addEventListener('click', () => {
+  const txt = encodeURIComponent(buildSummaryText());
+  const num = (state.client.phone || '').replace(/\D/g,'') || CONFIG.whatsapp;
+  window.open(`https://wa.me/${num}?text=${txt}`, '_blank');
+});
+document.getElementById('btnEmail').addEventListener('click', () => {
+  const subj = encodeURIComponent(`Devis NexusAI Agency — ${state.quoteNumber}`);
+  const body = encodeURIComponent(buildSummaryText());
+  window.location.href = `mailto:${state.client.email || ''}?subject=${subj}&body=${body}`;
+});
+document.getElementById('btnCopy').addEventListener('click', () => {
+  navigator.clipboard.writeText(buildSummaryText()).then(()=>toast('Récapitulatif copié dans le presse-papier'));
+});
+
+// ====== ADMIN PANEL ======
+const overlay = document.getElementById('adminOverlay');
+document.getElementById('btnAdmin').addEventListener('click', () => { renderAdmin(); overlay.classList.add('open'); });
+document.getElementById('closeAdmin').addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+const groupTitles = {
+  site:'Sites & Pages', ecommerce:'E-commerce', app:'Applications',
+  ai:'IA & Automatisation', design:'Design & Branding',
+  marketing:'Marketing & SEO', maintenance:'Maintenance & Support'
+};
+function renderAdmin(){
+  const c = document.getElementById('adminGroups'); c.innerHTML = '';
+  Object.keys(CONFIG.catalog).forEach(group => {
+    const sec = document.createElement('div'); sec.className = 'admin-section';
+    sec.innerHTML = `<h3>${groupTitles[group] || group}</h3>
+      <div class="admin-row" style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--cream-mute);font-weight:600">
+        <span class="col-cat">Libellé</span><span class="col-cat">Prix €</span><span class="col-cat">Note / détail</span><span></span>
+      </div>`;
+    CONFIG.catalog[group].forEach((item, idx) => {
+      const row = document.createElement('div'); row.className = 'admin-row';
+      row.innerHTML = `
+        <input type="text" value="${escapeHtml(item.label)}" data-g="${group}" data-i="${idx}" data-f="label" />
+        <input type="number" value="${item.price}" data-g="${group}" data-i="${idx}" data-f="price" min="0" step="10" />
+        <input type="text" value="${escapeHtml(item.note||'')}" data-g="${group}" data-i="${idx}" data-f="note" />
+        <button class="line-del-btn" data-g="${group}" data-i="${idx}" title="Supprimer cette ligne">×</button>
+      `;
+      sec.appendChild(row);
+    });
+    const addBtn = document.createElement('button');
+    addBtn.className = 'btn btn-ghost btn-sm';
+    addBtn.style.cssText = 'margin-top:8px;color:var(--ink-soft);border-color:var(--line-l-s)';
+    addBtn.textContent = `+ Ajouter dans ${groupTitles[group] || group}`;
+    addBtn.addEventListener('click', () => {
+      CONFIG.catalog[group].push({ id:'custom_'+Date.now(), label:'Nouvelle prestation', price:0, note:'' });
+      renderAdmin();
+    });
+    sec.appendChild(addBtn);
+    c.appendChild(sec);
+  });
+
+  document.getElementById('cfgCurrency').value = CONFIG.currency;
+  document.getElementById('cfgQuotePrefix').value = CONFIG.quotePrefix;
+  document.getElementById('cfgWa').value = CONFIG.whatsapp;
+  document.getElementById('cfgEmail').value = CONFIG.email;
+  document.getElementById('cfgValidity').value = CONFIG.validity;
+
+  c.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', e => {
+      const g = e.target.dataset.g, i = Number(e.target.dataset.i), f = e.target.dataset.f;
+      const item = CONFIG.catalog[g][i];
+      if (f === 'price') item[f] = Number(e.target.value)||0;
+      else item[f] = e.target.value;
+    });
+  });
+  c.querySelectorAll('.line-del-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const g = btn.dataset.g, i = Number(btn.dataset.i);
+      if (confirm('Supprimer cette prestation du catalogue ?')){
+        CONFIG.catalog[g].splice(i,1); renderAdmin();
+      }
+    });
+  });
+}
+
+document.getElementById('adminSave').addEventListener('click', () => {
+  CONFIG.currency = document.getElementById('cfgCurrency').value || '€';
+  CONFIG.quotePrefix = document.getElementById('cfgQuotePrefix').value || 'DEV';
+  CONFIG.whatsapp = document.getElementById('cfgWa').value || '';
+  CONFIG.email = document.getElementById('cfgEmail').value || '';
+  CONFIG.validity = Number(document.getElementById('cfgValidity').value) || 30;
+  saveConfig(); renderCatalog(); renderSectors(); renderLines(); recalc();
+  overlay.classList.remove('open');
+  toast('Tarifs et paramètres sauvegardés ✓');
+});
+document.getElementById('adminReset').addEventListener('click', () => {
+  if (!confirm('Réinitialiser TOUS les tarifs aux valeurs par défaut ?')) return;
+  localStorage.removeItem(CFG_KEY);
+  CONFIG = loadConfig();
+  renderAdmin(); renderCatalog(); renderSectors(); renderLines(); recalc();
+  toast('Tarifs réinitialisés');
+});
+document.getElementById('adminExport').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(CONFIG, null, 2)], { type:'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `nexusai-tarifs-${todayISO()}.json`;
+  a.click();
+  toast('Configuration exportée');
+});
+document.getElementById('adminImport').addEventListener('change', e => {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      const imported = JSON.parse(reader.result);
+      CONFIG = { ...DEFAULT_CONFIG, ...imported };
+      saveConfig(); renderAdmin(); renderCatalog(); renderSectors(); renderLines(); recalc();
+      toast('Configuration importée ✓');
+    }catch(err){ toast('Fichier invalide'); }
+  };
+  reader.readAsText(file);
+});
+
+// ====== INIT ======
+autoload();
+fillForm();
+renderSectors();
+renderCatalog();
+renderLines();
+recalc();
+
+// Keyboard shortcut: Ctrl/Cmd + E pour ouvrir l'admin
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'e'){
+    e.preventDefault(); renderAdmin(); overlay.classList.add('open');
+  }
+});
+</script>
+</body>
+</html>
